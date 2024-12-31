@@ -591,7 +591,7 @@ ___
 
 | `panel` [`UIScript`](mw.UIScript.md) | 界面 |
 | :------ | :------ |
-| `layer?` `number` | 图层 default:UILayer.UILayerMiddle range:不做限制，可使用 UILayerMiddle 类型枚举 type: 整数 |
+| `layer?` `number` | 图层 default:UILayer.UILayerMiddle range:不做限制，可使用 UILayerMiddle 类型枚举 type: 整形 |
 | `...params` `any`[] | 显示参数(这个参数可以传递给界面的onShow方法) |
 
 #### Returns

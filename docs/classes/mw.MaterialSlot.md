@@ -84,13 +84,16 @@ export default class ModelExample extends Script {
 | 获取自定义材质|
 | **[resetColor](mw.MaterialSlot.md#resetcolor)**(): `void`   |
 | 重置插槽颜色|
-| **[resetMaterial](mw.MaterialSlot.md#resetmaterial)**(): `void` |
+| **[resetMaterial](mw.MaterialSlot.md#resetmaterial)**(): `void`   |
+| 重置当前插槽材质为初始材质|
+
+构造函数
 
 #### Parameters
 
-| `index` | `number` |
+| `index` `number` | 材质插槽的索引 default: 无 range: 无 type: 整形 |
 | :------ | :------ |
-| `model` | [`Model`](mw.Model.md) |
+| `model` [`Model`](mw.Model.md) | 材质插槽引用的Model default: 无 range: 无 |
 
 ## Accessors
 
@@ -266,5 +269,7 @@ ___
 
 ### resetMaterial <Score text="resetMaterial" /> 
 
-• **resetMaterial**(): `void`
+• **resetMaterial**(): `void` 
+
+重置当前插槽材质为初始材质
 

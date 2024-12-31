@@ -72,6 +72,8 @@
 | 获取选中节点的索引|
 | **[getSelectionItems](mw.ListView.md#getselectionitems)**(): [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)[] <Badge type="tip" text="client" />  |
 | 获取选中节点的数据|
+| **[getTouchCanControlThisScroll](mw.ListView.md#gettouchcancontrolthisscroll)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取是否受Touch事件影响滚动|
 | **[insertItem](mw.ListView.md#insertitem)**(`newItem`: [`ListViewItemDataBase`](mw.ListViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="client" />  |
 | 插入项目节点数据，如果位置越界，则自动插入最后|
 | **[removeItem](mw.ListView.md#removeitem)**(`delItem`: [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)): `void` <Badge type="tip" text="client" />  |
@@ -88,6 +90,8 @@
 | 设置节点选中|
 | **[setSelectionItemByIndex](mw.ListView.md#setselectionitembyindex)**(`selectedIndexs`: `number`  `number`[], `selected`: `boolean`, `selectInfo?`: [`SelectInfo`](../enums/mw.SelectInfo.md)): `void` <Badge type="tip" text="client" />  |
 | 根据索引设置节点选中，如果位置越界，则越界对应的操作无效|
+| **[setTouchCanControlThisScroll](mw.ListView.md#settouchcancontrolthisscroll)**(`bCanControl`: `boolean`): `void` <Badge type="tip" text="client" />  |
+| 设置是否受Touch事件影响滚动|
 | **[newObject](mw.ListView.md#newobject)**(`orientation`: [`Orientation`](../enums/mw.Orientation.md), `uiAssetGUID`: `string`, `parent?`: [`Canvas`](mw.Canvas.md), `inName?`: `string`): [`ListView`](mw.ListView.md) <Badge type="tip" text="client" />  |
 | 创建 ListView 控件，当parent和inName与已有的对象相同时，旧的对象会被销毁|
 :::

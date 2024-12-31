@@ -99,6 +99,14 @@ export default class EffectExample extends Script {
 | 获取设置生命周期内颜色变化曲线|
 | **[drag](mw.ParticleEmitter.md#drag)**(): `number` <Badge type="tip" text="client" />  |
 | 阻力|
+| **[flipbookCellCount](mw.ParticleEmitter.md#flipbookcellcount)**(): `number` <Badge type="tip" text="client" />  |
+| 序列帧布局可用单元数量|
+| **[flipbookCirculationTime](mw.ParticleEmitter.md#flipbookcirculationtime)**(): `number` <Badge type="tip" text="client" />  |
+| 序列帧动画循环次数|
+| **[flipbookLayout](mw.ParticleEmitter.md#flipbooklayout)**(): [`ParticleFlipbookLayout`](../enums/mw.ParticleFlipbookLayout.md) <Badge type="tip" text="client" />  |
+| 序列帧贴图的布局|
+| **[flipbookMode](mw.ParticleEmitter.md#flipbookmode)**(): [`ParticleFlipbookMode`](../enums/mw.ParticleFlipbookMode.md) <Badge type="tip" text="client" />  |
+| 序列帧的播放模式|
 | **[isLocalSpace](mw.ParticleEmitter.md#islocalspace)**(): `boolean` <Badge type="tip" text="client" />  |
 | 是否使用局部空间|
 | **[lifetime](mw.ParticleEmitter.md#lifetime)**(): [`Vector2`](mw.Vector2.md) <Badge type="tip" text="client" />  |
@@ -115,8 +123,12 @@ export default class EffectExample extends Script {
 | 获取生命周期内旋转速度变化曲线|
 | **[rotation](mw.ParticleEmitter.md#rotation)**(): `number` <Badge type="tip" text="client" />  |
 | 初始旋转|
+| **[shape](mw.ParticleEmitter.md#shape)**(): [`ParticleEmitterShape`](../enums/mw.ParticleEmitterShape.md) <Badge type="tip" text="client" />  |
+| 形状|
 | **[shapeExtents](mw.ParticleEmitter.md#shapeextents)**(): [`Vector`](mw.Vector.md) <Badge type="tip" text="client" />  |
 | 形状范围|
+| **[shapeInOut](mw.ParticleEmitter.md#shapeinout)**(): [`ParticleEmitterShapeInOut`](../enums/mw.ParticleEmitterShapeInOut.md) <Badge type="tip" text="client" />  |
+| 获取发射内外朝向|
 | **[shapeStyle](mw.ParticleEmitter.md#shapestyle)**(): [`ParticleEmitterShapeStyle`](../enums/mw.ParticleEmitterShapeStyle.md) <Badge type="tip" text="client" />  |
 | 形状样式|
 | **[size](mw.ParticleEmitter.md#size)**(): [`vector2DSequencePoint`](mw.vector2DSequencePoint.md)[] <Badge type="tip" text="client" />  |
@@ -133,10 +145,8 @@ export default class EffectExample extends Script {
 
 ::: details click
 ### Accessors <Score text="Accessors" /> 
-| **[actorFlagValue](mw.GameObject.md#actorflagvalue)**(): `number` <Badge type="tip" text="other" />  |
-| :-----|
-| 获取对象标记|
 | **[actorLevel](mw.GameObject.md#actorlevel)**(): `number` <Badge type="tip" text="other" />  |
+| :-----|
 | 获取Actor等级|
 | **[assetId](mw.GameObject.md#assetid)**(): `string`   |
 | 获取当前物体使用资源的GUID|
@@ -154,6 +164,8 @@ export default class EffectExample extends Script {
 | 获取当前物体同步状态|
 | **[parent](mw.GameObject.md#parent)**(): [`GameObject`](mw.GameObject.md)   |
 | 获取当前父物体|
+| **[sceneCaptureTag](mw.GameObject.md#scenecapturetag)**(): `string`   |
+| 获取当前物体的捕捉标签|
 | **[tag](mw.GameObject.md#tag)**(): `string`   |
 | 获取当前物体的标签|
 | **[worldTransform](mw.GameObject.md#worldtransform)**(): [`Transform`](mw.Transform.md)   |
@@ -162,8 +174,10 @@ export default class EffectExample extends Script {
 
 
 ### Methods <Score text="Methods" /> 
-| **[forceStop](mw.ParticleEmitter.md#forcestop)**(): `void` <Badge type="tip" text="client" />  |
+| **[emit](mw.ParticleEmitter.md#emit)**(`[emit](mw.ParticleEmitter.md#emit)Count`): `void` <Badge type="tip" text="client" />  |
 | :-----|
+| 发射固定数量粒子|
+| **[forceStop](mw.ParticleEmitter.md#forcestop)**(): `void` <Badge type="tip" text="client" />  |
 | 强制停止特效，所有粒子全部销毁|
 | **[play](mw.ParticleEmitter.md#play)**(): `void` <Badge type="tip" text="client" />  |
 | 播放特效|
@@ -196,8 +210,6 @@ export default class EffectExample extends Script {
 | 根据路径查找子物体|
 | **[getChildren](mw.GameObject.md#getchildren)**(): [`GameObject`](mw.GameObject.md)[]   |
 | 获取子物体|
-| **[getChildrenBoundingBoxCenter](mw.GameObject.md#getchildrenboundingboxcenter)**(`outer?`: [`Vector`](mw.Vector.md)): [`Vector`](mw.Vector.md)   |
-| 获取所有子对象包围盒中心点(不包含父对象,父对象不可用返回[0,0,0])|
 | **[getChildrenByName](mw.GameObject.md#getchildrenbyname)**(`name`: `string`): [`GameObject`](mw.GameObject.md)[]   |
 | 通过名字查找所有的子物体|
 | **[getComponent](mw.GameObject.md#getcomponent)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>   |
@@ -207,11 +219,11 @@ export default class EffectExample extends Script {
 | **[getComponents](mw.GameObject.md#getcomponents)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>[]   |
 | 获取指定类型的所有组件|
 | **[getCustomProperties](mw.GameObject.md#getcustomproperties)**(): `string`[]   |
-| 获取所有自定义属性|
+| 获取自定义属性名字数组，返回对象所有自定义属性。|
 | **[getCustomProperty](mw.GameObject.md#getcustomproperty)**<`T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)\>(`propertyName`: `string`): `T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)   |
-| 获取自定义属性|
-| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
-| 给定对象属性修改时触发的事件代理|
+| 获取自定义属性的值，服务器客户端均可调用，客户端调用需注意属性同步的延迟。|
+| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
+| 获取给定自定义属性修改时触发的事件代理。双端对象在服务器修改自定义属性后，双端均会触发事件并执行绑定函数。|
 | **[getVisibility](mw.GameObject.md#getvisibility)**(): `boolean`   |
 | 获取物体是否被显示|
 | **[isPrefabActor](mw.GameObject.md#isprefabactor)**(): `boolean`   |
@@ -230,8 +242,8 @@ export default class EffectExample extends Script {
 | 在指定时间内从当前缩放平滑变化至目标缩放|
 | **[setAbsolute](mw.GameObject.md#setabsolute)**(`absolutePosition?`: `boolean`, `absoluteRotation?`: `boolean`, `absoluteScale?`: `boolean`): `void`   |
 | 设置物体localTransform是相对于父物体或者世界|
-| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void`   |
-| 设置自定义属性|
+| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void` <Badge type="tip" text="server" />  |
+| 设置自定义属性的值，双端对象需在服务器调用。当设置的属性不存在时会新增自定义属性。|
 | **[setVisibility](mw.GameObject.md#setvisibility)**(`status`: `boolean`  [`PropertyStatus`](../enums/mw.PropertyStatus.md), `propagateToChildren?`: `boolean`): `void`   |
 | 设置物体是否被显示|
 | **[stopMove](mw.GameObject.md#stopmove)**(): `void` <Badge type="tip" text="other" />  |
@@ -441,6 +453,190 @@ ___
 #### Parameters
 
 | `drag` `number` | 生成粒子所受到的的阻力 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### flipbookCellCount <Score text="flipbookCellCount" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **flipbookCellCount**(): `number` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **flipbookCellCount**(`avalidNum`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+序列帧布局可用单元数量
+
+#### Returns
+
+| `number` | 序列帧布局可用单元数量 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+序列帧布局可用单元数量
+
+#### Parameters
+
+| `avalidNum` `number` | 序列帧布局拆分后使用的拆分单元数量 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### flipbookCirculationTime <Score text="flipbookCirculationTime" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **flipbookCirculationTime**(): `number` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **flipbookCirculationTime**(`value`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+序列帧动画循环次数
+
+#### Returns
+
+| `number` | 序列帧动画循环次数 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+序列帧动画循环次数
+
+#### Parameters
+
+| `value` `number` | 序列帧在生命周期内循环播放的次数 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### flipbookLayout <Score text="flipbookLayout" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **flipbookLayout**(): [`ParticleFlipbookLayout`](../enums/mw.ParticleFlipbookLayout.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **flipbookLayout**(`Layout`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+序列帧贴图的布局
+
+#### Returns
+
+| [`ParticleFlipbookLayout`](../enums/mw.ParticleFlipbookLayout.md) | 序列帧贴图的布局 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+序列帧贴图的布局
+
+#### Parameters
+
+| `Layout` [`ParticleFlipbookLayout`](../enums/mw.ParticleFlipbookLayout.md) | 序列帧贴图的布局 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### flipbookMode <Score text="flipbookMode" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **flipbookMode**(): [`ParticleFlipbookMode`](../enums/mw.ParticleFlipbookMode.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **flipbookMode**(`Layout`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+序列帧的播放模式
+
+#### Returns
+
+| [`ParticleFlipbookMode`](../enums/mw.ParticleFlipbookMode.md) | 序列帧的播放模式 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+序列帧的播放模式
+
+#### Parameters
+
+| `Layout` [`ParticleFlipbookMode`](../enums/mw.ParticleFlipbookMode.md) | 序列帧的播放模式 |
 | :------ | :------ |
 
 
@@ -819,6 +1015,52 @@ ___
 
 ___
 
+### shape <Score text="shape" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **shape**(): [`ParticleEmitterShape`](../enums/mw.ParticleEmitterShape.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **shape**(`shape`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+形状
+
+#### Returns
+
+| [`ParticleEmitterShape`](../enums/mw.ParticleEmitterShape.md) | 特效的形状 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+形状
+
+#### Parameters
+
+| `shape` [`ParticleEmitterShape`](../enums/mw.ParticleEmitterShape.md) | 特效的形状 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
 ### shapeExtents <Score text="shapeExtents" /> 
 
 <table class="get-set-table">
@@ -855,6 +1097,52 @@ ___
 #### Parameters
 
 | `extents` [`Vector`](mw.Vector.md) | 特效的形状范围 （设置粒子发射器的形状大小, 这决定了粒子会在多大的范围内随机生成） 仅非点状类型时生效 X 代表圆/球半径 三角形边长 Y 代表等腰三角形内角 Z 代表体积高度 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### shapeInOut <Score text="shapeInOut" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **shapeInOut**(): [`ParticleEmitterShapeInOut`](../enums/mw.ParticleEmitterShapeInOut.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **shapeInOut**(`shape`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取发射内外朝向
+
+#### Returns
+
+| [`ParticleEmitterShapeInOut`](../enums/mw.ParticleEmitterShapeInOut.md) | 特效的发射朝向 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置发射内外朝向
+
+#### Parameters
+
+| `shape` [`ParticleEmitterShapeInOut`](../enums/mw.ParticleEmitterShapeInOut.md) | 特效的发射朝向 |
 | :------ | :------ |
 
 
@@ -934,7 +1222,7 @@ ___
 
 #### Returns
 
-| [`vector2DSequencePoint`](mw.vector2DSequencePoint.md)[] |  |
+| [`vector2DSequencePoint`](mw.vector2DSequencePoint.md)[] | 大小变化曲线节点数组 |
 | :------ | :------ |
 
 
@@ -1123,6 +1411,20 @@ ___
 
 
 ## Methods
+
+___
+
+### emit <Score text="emit" /> 
+
+• **emit**(`emitCount`): `void` <Badge type="tip" text="client" />
+
+发射固定数量粒子
+
+#### Parameters
+
+| `emitCount` `number` | 需要发射的粒子数量 range: 不做限制 type: 浮点数 |
+| :------ | :------ |
+
 
 ___
 

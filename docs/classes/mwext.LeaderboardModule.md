@@ -167,8 +167,8 @@ ___
 | `title` `string` |  界面标题 range: UI 标题信息 |
 | :------ | :------ |
 | `fieldsAutoLayout` `boolean` |  字段是否自动布局，均匀分布 |
-| `showPlayerNum` `number` |  最多显示的玩家数量 range:合理即可 type: 整数 |
-| `itemSpacing` `number` |  每条数据的间距 range:合理即可 type: 整数 |
+| `showPlayerNum` `number` |  最多显示的玩家数量 range:合理即可 type: 整形 |
+| `itemSpacing` `number` |  每条数据的间距 range:合理即可 type: 整形 |
 
 #### Returns
 

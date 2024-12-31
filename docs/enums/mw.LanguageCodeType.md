@@ -24,11 +24,15 @@
 
 • **ChineseSimplified** = ``"Zh_CN"``
 
+ChineseSimplified
+
 ___
 
 ### ChineseTraditional <Score text="ChineseTraditional" /> 
 
 • **ChineseTraditional** = ``"Zh_HANT"``
+
+ChineseTraditional
 
 ___
 
@@ -36,11 +40,15 @@ ___
 
 • **English** = ``"En"``
 
+English
+
 ___
 
 ### French <Score text="French" /> 
 
 • **French** = ``"Fr"``
+
+French
 
 ___
 
@@ -48,11 +56,15 @@ ___
 
 • **Japanese** = ``"Ja"``
 
+Japanese
+
 ___
 
 ### Korean <Score text="Korean" /> 
 
 • **Korean** = ``"Ko"``
+
+Korean
 
 ___
 
@@ -60,14 +72,20 @@ ___
 
 • **Portuguese** = ``"Pt"``
 
+Portuguese
+
 ___
 
 ### Russian <Score text="Russian" /> 
 
 • **Russian** = ``"Ru"``
 
+Russian
+
 ___
 
 ### Spanish <Score text="Spanish" /> 
 
 • **Spanish** = ``"Es"``
+
+Spanish

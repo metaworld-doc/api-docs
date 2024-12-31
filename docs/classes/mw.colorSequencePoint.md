@@ -13,11 +13,13 @@
 | **[value](mw.colorSequencePoint.md#value)**: [`LinearColor`](mw.LinearColor.md)  |
 | 颜色值|
 
+构造函数
+
 #### Parameters
 
-| `inTimeKey` | `number` |
+| `inTimeKey` `number` | 时间点 type: 浮点型 range:[0, 1] |
 | :------ | :------ |
-| `inValue` | [`LinearColor`](mw.LinearColor.md) |
+| `inValue` [`LinearColor`](mw.LinearColor.md) | 时间点 type: LinearColor range: 无 |
 
 ## Properties
 

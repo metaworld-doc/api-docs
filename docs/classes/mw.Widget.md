@@ -16,10 +16,6 @@
 
   ↳ [`AdsButton`](mw.AdsButton.md)
 
-  ↳ [`Button`](mw.Button.md)
-
-  ↳ [`Canvas`](mw.Canvas.md)
-
   ↳ [`Checkbox`](mw.Checkbox.md)
 
   ↳ [`ColorPick`](mw.ColorPick.md)
@@ -42,9 +38,9 @@
 
   ↳ [`MenuAnchor`](mw.MenuAnchor.md)
 
-  ↳ [`ProgressBar`](mw.ProgressBar.md)
+  ↳ [`PanelWidget`](Core.mw.PanelWidget.md)
 
-  ↳ [`ScrollBox`](mw.ScrollBox.md)
+  ↳ [`ProgressBar`](mw.ProgressBar.md)
 
   ↳ [`StaleButton`](mw.StaleButton.md)
 
@@ -146,6 +142,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -168,6 +166,10 @@
 • **onCustomPropertyChange**: `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />
 
 监听自定义属性同步事件
+
+<span style="font-size: 14px;">
+使用示例:监听自定义属性变化
+</span>
 
 ```ts
 this.onCustomPropertyChange.add((path, value, oldValue) => {
@@ -1259,7 +1261,7 @@ ___
 
 | `position` [`Vector2`](mw.Vector2.md) | 克隆后控件生成的位置 |
 | :------ | :------ |
-| `Parent?` [`Widget`](mw.Widget.md) | 克隆后的控件需要在该控件下生成 |
+| `Parent?` [`Widget`](mw.Widget.md) | 克隆后的控件需要在该控件下生成 default: undefined |
 
 #### Returns
 
@@ -1321,7 +1323,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 下标 range: 大于 0 type: 整数 |
+| `index` `number` | 下标 range:大于等于0 type: 整形 |
 | :------ | :------ |
 
 #### Returns
@@ -1378,6 +1380,10 @@ ___
 | `string`[] | 属性名列表 |
 | :------ | :------ |
 
+<span style="font-size: 14px;">
+使用示例:获取所有自定义属性
+</span>
+
 ```ts
 const attributes = this.getAttributes();
 console.log(attributes);
@@ -1394,7 +1400,7 @@ ___
 
 #### Parameters
 
-| `propertyName` `string` | 属性名 |
+| `propertyName` `string` | 对象属性名字 range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -1417,7 +1423,7 @@ ___
 
 #### Parameters
 
-| `property` `string` | 对象属性名字 |
+| `property` `string` | 对象属性名字 range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -1433,6 +1439,19 @@ ___
 
 立刻触发重新渲染的和排布计算
 
+
+___
+
+### isValid <Score text="isValid" /> 
+
+• **isValid**(): `boolean` <Badge type="tip" text="client" />
+
+判断控件有没有被销毁，是否是有效的控件
+
+#### Returns
+
+| `boolean` | boolean 是否还有效，判定有没有被销毁 |
+| :------ | :------ |
 
 ___
 
@@ -1467,7 +1486,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 下标 range: 大于 0 type: 整数 |
+| `index` `number` | 下标 range: 大于 0 type: 整形 |
 | :------ | :------ |
 
 
@@ -1503,7 +1522,7 @@ ___
 
 #### Parameters
 
-| `propertyName` `string` | 属性名 |
+| `propertyName` `string` | 对象属性名字 range: 无 |
 | :------ | :------ |
 | `value` `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype) | 属性值 |
 
@@ -1518,9 +1537,9 @@ ___
 
 #### Parameters
 
-| `Data` `string` | usage：需要反序列化的JSON字符串 |
+| `Data` `string` | 需要反序列化的JSON字符串 range: 无 |
 | :------ | :------ |
-| `Parent?` [`Widget`](mw.Widget.md) | usage：生成的UI控件的父节点 |
+| `Parent?` [`Widget`](mw.Widget.md) | 生成的UI控件的父节点 default: undefined |
 
 #### Returns
 

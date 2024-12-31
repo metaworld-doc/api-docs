@@ -131,7 +131,9 @@
 | 获取选中节点的数据|
 | **[getShowItemsCount](mw.TreeView.md#getshowitemscount)**(): `number` <Badge type="tip" text="client" />  |
 | 获取当前展示的条目的数量|
-| **[insertItem](mw.TreeView.md#insertitem)**(`newItem`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[getTouchCanControlThisScroll](mw.TreeView.md#gettouchcancontrolthisscroll)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取是否受Touch事件影响滚动|
+| **[insertItem](mw.TreeView.md#insertitem)**(`newItem`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="client" />  |
 | 插入项目节点数据，如果位置越界，则自动插入最后|
 | **[regenerateTreeData](mw.TreeView.md#regeneratetreedata)**(`regenItems`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[]): `void` <Badge type="tip" text="client" />  |
 | 重新生成树刷新数据|
@@ -147,6 +149,8 @@
 | 设置节点的展开状态|
 | **[setSelectionItem](mw.TreeView.md#setselectionitem)**(`selectedItems`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)  [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[], `selected`: `boolean`, `selectInfo?`: [`SelectInfo`](../enums/mw.SelectInfo.md)): `void` <Badge type="tip" text="client" />  |
 | 设置节点选中|
+| **[setTouchCanControlThisScroll](mw.TreeView.md#settouchcancontrolthisscroll)**(`bCanControl`: `boolean`): `void` <Badge type="tip" text="client" />  |
+| 设置是否受Touch事件影响滚动|
 | **[toggleItemExpansion](mw.TreeView.md#toggleitemexpansion)**(`targetItem`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)): `void` <Badge type="tip" text="client" />  |
 | 修改节点的展开状态|
 | **[newObject](mw.TreeView.md#newobject)**(`uiAssetGUID`: `string`, `parent?`: [`Canvas`](mw.Canvas.md), `inName?`: `string`): [`TreeView`](mw.TreeView.md) <Badge type="tip" text="client" />  |
@@ -180,6 +184,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -267,7 +273,7 @@ ___
 
 #### Parameters
 
-| `itemIndentAmount` `number` | 偏移量, 具体值需>=0, 负数无效果 |
+| `itemIndentAmount` `number` | 偏移量, 具体值需>=0, 负数无效果 range: [0, Inf) type: 整形 |
 | :------ | :------ |
 
 
@@ -791,14 +797,27 @@ ___
 
 #### Returns
 
-| `number` |  |
+| `number` | 当前展示的条目的数量 |
+| :------ | :------ |
+
+___
+
+### getTouchCanControlThisScroll <Score text="getTouchCanControlThisScroll" /> 
+
+• **getTouchCanControlThisScroll**(): `boolean` <Badge type="tip" text="client" />
+
+获取是否受Touch事件影响滚动
+
+#### Returns
+
+| `boolean` | 能否touch能控制滚动 |
 | :------ | :------ |
 
 ___
 
 ### insertItem <Score text="insertItem" /> 
 
-• **insertItem**(`newItem`, `index`): `void` <Badge type="tip" text="other" />
+• **insertItem**(`newItem`, `index`): `void` <Badge type="tip" text="client" />
 
 插入项目节点数据，如果位置越界，则自动插入最后
 
@@ -806,7 +825,7 @@ ___
 
 | `newItem` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md) | 需要插入的新数据 |
 | :------ | :------ |
-| `index` `number` | 插入的位置 |
+| `index` `number` | 插入的位置 range: 无 type: 整形 |
 
 
 ___
@@ -819,7 +838,7 @@ ___
 
 #### Parameters
 
-| `regenItems` | [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] |
+| `regenItems` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] | 刷新数据 |
 | :------ | :------ |
 
 
@@ -901,8 +920,22 @@ ___
 
 | `selectedItems` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)  [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] | 需要修改选中的节点数据 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | - |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
+
+
+___
+
+### setTouchCanControlThisScroll <Score text="setTouchCanControlThisScroll" /> 
+
+• **setTouchCanControlThisScroll**(`bCanControl`): `void` <Badge type="tip" text="client" />
+
+设置是否受Touch事件影响滚动
+
+#### Parameters
+
+| `bCanControl` `boolean` | 能否touch控制滚动 |
+| :------ | :------ |
 
 
 ___
@@ -929,10 +962,10 @@ ___
 
 #### Parameters
 
-| `uiAssetGUID` `string` |  设置视图绑定的节点UI |
+| `uiAssetGUID` `string` |  设置视图绑定的节点UI range: 无 |
 | :------ | :------ |
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
-| `inName?` `string` | 创建控件的名称 default:null |
+| `inName?` `string` | 创建控件的名称 default:null range: 无 |
 
 #### Returns
 

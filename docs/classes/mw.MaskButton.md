@@ -29,8 +29,6 @@
 | 获取圆形遮罩的中心旋转点|
 | **[circleValue](mw.MaskButton.md#circlevalue)**(): `number` <Badge type="tip" text="client" />  |
 | 获取圆形遮罩的遮挡百分值|
-| **[clickMethod](mw.MaskButton.md#clickmethod)**(): [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md) <Badge type="tip" text="client" />  |
-| 获取点击模式|
 | **[clickedDelegate](mw.MaskButton.md#clickeddelegate)**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<() => `void`\> <Badge type="tip" text="client" />  |
 | 点击事件|
 | **[disableImageColor](mw.MaskButton.md#disableimagecolor)**(): `Readonly`<[`LinearColor`](mw.LinearColor.md)\> <Badge type="tip" text="client" />  |
@@ -226,6 +224,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -331,52 +331,6 @@ ___
 #### Parameters
 
 | `value` `number` | 百分进度值,0~1 |
-| :------ | :------ |
-
-
-
-</td>
-</tr></tbody>
-</table>
-
-___
-
-### clickMethod <Score text="clickMethod" /> 
-
-<table class="get-set-table">
-<thead><tr>
-<th style="text-align: left">
-
-• `get` **clickMethod**(): [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md) <Badge type="tip" text="client" />
-
-</th>
-<th style="text-align: left">
-
-• `set` **clickMethod**(`inClickMethod`): `void` <Badge type="tip" text="client" />
-
-</th>
-</tr></thead>
-<tbody><tr>
-<td style="text-align: left">
-
-
-获取点击模式
-
-#### Returns
-
-| [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md) | 点击模式 |
-| :------ | :------ |
-
-
-</td>
-<td style="text-align: left">
-
-
-设置点击模式
-
-#### Parameters
-
-| `inClickMethod` [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md) | 点击模式选择 |
 | :------ | :------ |
 
 
@@ -2130,11 +2084,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2161,11 +2115,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2192,11 +2146,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2223,11 +2177,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___

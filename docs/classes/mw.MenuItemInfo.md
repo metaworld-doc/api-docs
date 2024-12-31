@@ -27,6 +27,13 @@
 | **[uiCommand](mw.MenuItemInfo.md#uicommand)**: `string`  |
 | 菜单快捷键信息展示|
 
+构造函数
+
+#### Parameters
+
+| `id` `string` |  用于校验的Id range: 无 |
+| :------ | :------ |
+
 ## Properties
 
 ### bEnabled <Score text="bEnabled" /> 

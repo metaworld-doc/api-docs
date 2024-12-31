@@ -83,6 +83,8 @@
 | **[angleCheck](mw.MathUtil.md#anglecheck)**(`StartLocation`: [`Vector`](mw.Vector.md), `StartDirection`: [`Vector`](mw.Vector.md), `TargetLocation`: [`Vector`](mw.Vector.md), `Angle`: `number`): `boolean`   |
 | :-----|
 | 判断终点位置是否处于起点位置在某一方向的一定角度内|
+| **[areFloatsEqual](mw.MathUtil.md#arefloatsequal)**(`a`: `number`, `b`: `number`, `epsilon?`: `number`): `boolean`   |
+| 判断浮点数是否近似相等|
 | **[clamp](mw.MathUtil.md#clamp)**(`a`: `number`, `min`: `number`, `max`: `number`): `number`   |
 | 将传入的数值 a 限制在 min 与 max 范围内，超出部分自动舍弃|
 | **[cos](mw.MathUtil.md#cos)**(`a`: `number`): `number`   |
@@ -420,6 +422,26 @@ else {
 
 ___
 
+### areFloatsEqual <Score text="areFloatsEqual" /> 
+
+• `Static` **areFloatsEqual**(`a`, `b`, `epsilon?`): `boolean` 
+
+判断浮点数是否近似相等
+
+#### Parameters
+
+| `a` `number` | 对比变量 a range: 数据大小不做限制 type: 浮点 |
+| :------ | :------ |
+| `b` `number` | 对比变量 b range: 数据大小不做限制 type: 浮点 |
+| `epsilon?` `number` | 判断精度 range: 数据大小不做限制 type: 浮点 default: MathUtil.EPSILON(1.e-7) |
+
+#### Returns
+
+| `boolean` | true，两浮点数近似相等 |
+| :------ | :------ |
+
+___
+
 ### clamp <Score text="clamp" /> 
 
 • `Static` **clamp**(`a`, `min`, `max`): `number` 
@@ -715,9 +737,9 @@ ___
 
 #### Parameters
 
-| `min` `number` | 最小值 range: 数据大小不做限制 type: 整数 |
+| `min` `number` | 最小值 range: 数据大小不做限制 type: 整形 |
 | :------ | :------ |
-| `max` `number` | 最大值 range: 数据大小不做限制 type: 整数 |
+| `max` `number` | 最大值 range: 数据大小不做限制 type: 整形 |
 
 #### Returns
 

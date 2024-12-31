@@ -24,18 +24,20 @@
 
 
 ### Accessors <Score text="Accessors" /> 
-| **[imageColor](mw.Image.md#imagecolor)**(): `Readonly`<[`LinearColor`](mw.LinearColor.md)\> <Badge type="tip" text="client" />  |
+| **[currentCamera](mw.Image.md#currentcamera)**(): [`Camera`](mw.Camera.md) <Badge type="tip" text="client" />  |
 | :-----|
+| 获取当前渲染的摄像机|
+| **[imageColor](mw.Image.md#imagecolor)**(): `Readonly`<[`LinearColor`](mw.LinearColor.md)\> <Badge type="tip" text="client" />  |
 | 获取图片的颜色|
 | **[imageDrawType](mw.Image.md#imagedrawtype)**(): `Readonly`<[`SlateBrushDrawType`](../enums/mw.SlateBrushDrawType.md)\> <Badge type="tip" text="client" />  |
 | 获取图片绘制类型|
 | **[imageGuid](mw.Image.md#imageguid)**(): `string` <Badge type="tip" text="client" />  |
 | 获取图片id|
-| **[imageInfo](mw.Image.md#imageinfo)**(): [`ImageInfo`](mw.ImageInfo.md) <Badge type="tip" text="client" />  |
+| **[imageInfo](mw.Image.md#imageinfo)**(): [`ImageInfo`](mw.ImageInfo.md)  |
 | 图片资源信息|
 | **[imageSize](mw.Image.md#imagesize)**(): `Readonly`<[`Vector2`](mw.Vector2.md)\> <Badge type="tip" text="client" />  |
 | 获取图片大小|
-| **[margin](mw.Image.md#margin)**(): `Readonly`<[`Margin`](mw.Margin.md)\> <Badge type="tip" text="client" />  |
+| **[margin](mw.Image.md#margin)**(): `Readonly`<[`Margin`](mw.Margin.md)\>  |
 | 获取图片边距|
 
 
@@ -144,6 +146,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -164,6 +168,52 @@
 ## Properties
 
 ## Accessors
+
+___
+
+### currentCamera <Score text="currentCamera" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **currentCamera**(): [`Camera`](mw.Camera.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **currentCamera**(`camera`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取当前渲染的摄像机
+
+#### Returns
+
+| [`Camera`](mw.Camera.md) | 新的摄像机对象 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置当前渲染的摄像机
+
+#### Parameters
+
+| `camera` `string`  [`Camera`](mw.Camera.md) | 新的摄像机对象 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
 
 ___
 
@@ -313,7 +363,7 @@ ___
 <thead><tr>
 <th style="text-align: left">
 
-• `get` **imageInfo**(): [`ImageInfo`](mw.ImageInfo.md) <Badge type="tip" text="client" />
+• `get` **imageInfo**(): [`ImageInfo`](mw.ImageInfo.md)
 
 </th>
 </tr></thead>
@@ -322,6 +372,7 @@ ___
 
 
 图片资源信息
+@effect只在客户端调用生效
 
 #### Returns
 
@@ -345,7 +396,7 @@ ___
 </th>
 <th style="text-align: left">
 
-• `set` **imageSize**(`inSize`): `void` <Badge type="tip" text="client" />
+• `set` **imageSize**(`inSize`): `void`
 
 </th>
 </tr></thead>
@@ -366,6 +417,7 @@ ___
 
 
 设置图片大小
+@effect只在客户端调用生效
 
 #### Parameters
 
@@ -386,12 +438,12 @@ ___
 <thead><tr>
 <th style="text-align: left">
 
-• `get` **margin**(): `Readonly`<[`Margin`](mw.Margin.md)\> <Badge type="tip" text="client" />
+• `get` **margin**(): `Readonly`<[`Margin`](mw.Margin.md)\>
 
 </th>
 <th style="text-align: left">
 
-• `set` **margin**(`inMargin`): `void` <Badge type="tip" text="client" />
+• `set` **margin**(`inMargin`): `void`
 
 </th>
 </tr></thead>
@@ -400,6 +452,7 @@ ___
 
 
 获取图片边距
+@effect只在客户端调用生效
 
 #### Returns
 
@@ -412,6 +465,7 @@ ___
 
 
 设置图片的边距
+@effect只在客户端调用生效
 
 #### Parameters
 
@@ -535,11 +589,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 图片 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 图片 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 图片 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 图片 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 图片 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 图片 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 图片 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 图片 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___

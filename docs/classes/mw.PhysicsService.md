@@ -18,15 +18,15 @@
 | **[boxOverlap](mw.PhysicsService.md#boxoverlap)**(`boxPos`: [`Vector`](mw.Vector.md), `boxExtent`: [`Vector`](mw.Vector.md), `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`GameObject`](mw.GameObject.md)[]   |
 | 返回一个与给定盒体重叠的对象数组|
 | **[boxTraceMulti](mw.PhysicsService.md#boxtracemulti)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `halfSize`: [`Vector`](mw.Vector.md), `orientation`: [`Rotation`](mw.Rotation.md), `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)[]   |
-| 沿着给定的路线扫描一个盒体，并返回遇到的所有命中，包括第一次拦截命中。|
+| 盒体沿着给定的路径扫过一个空间，直到首次在起点盒体空间之外遇到阻挡命中时结束（盒体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。|
 | **[boxTraceSingle](mw.PhysicsService.md#boxtracesingle)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `halfSize`: [`Vector`](mw.Vector.md), `orientation`: [`Rotation`](mw.Rotation.md), `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)   |
-| 沿着给定的线扫过一个盒体，并返回遇到的第一个阻挡命中。|
+| 盒体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。|
 | **[capsuleOverlap](mw.PhysicsService.md#capsuleoverlap)**(`capsulePos`: [`Vector`](mw.Vector.md), `radius`: `number`, `halfHeight`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`GameObject`](mw.GameObject.md)[]   |
 | 返回一个与给定胶囊体重叠的对象数组|
 | **[capsuleTraceMulti](mw.PhysicsService.md#capsuletracemulti)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `radius`: `number`, `halfHeight`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)[]   |
-| 沿着给定的路线扫描一个胶囊，并返回遇到的所有命中，包括第一次拦截命中。|
+| 胶囊体沿着给定的路径扫过一个空间，直到首次在起点胶囊体空间之外遇到阻挡命中时结束（胶囊体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。|
 | **[capsuleTraceSingle](mw.PhysicsService.md#capsuletracesingle)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `radius`: `number`, `halfHeight`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)   |
-| 沿着给定的线扫过一个胶囊体，并返回遇到的第一个阻挡命中。|
+| 胶囊体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。|
 | **[deleteCollisionGroup](mw.PhysicsService.md#deletecollisiongroup)**(`name`: `string`): `void`   |
 | 删除已有碰撞组|
 | **[getAvailableCollisionGroupsCount](mw.PhysicsService.md#getavailablecollisiongroupscount)**(): `number`   |
@@ -38,9 +38,9 @@
 | **[isCollisionGroupValid](mw.PhysicsService.md#iscollisiongroupvalid)**(`name`: `string`): `boolean`   |
 | 检测碰撞组是否有效(已添加过)|
 | **[lineTraceMulti](mw.PhysicsService.md#linetracemulti)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)[]   |
-| 沿着给定的行执行碰撞跟踪，并返回遇到的所有命中，直到并包括第一次阻塞命中。|
+| 沿着给定的路径进行射线追踪，直到首次遇到阻挡命中时结束，返回沿途遇到的所有命中。|
 | **[lineTraceSingle](mw.PhysicsService.md#linetracesingle)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)   |
-| 沿着给定的线进行碰撞追踪，并返回遇到的第一个阻挡命中。|
+| 沿着给定的路径进行射线追踪，并返回遇到的第一个阻挡命中。|
 | **[renameCollisionGroup](mw.PhysicsService.md#renamecollisiongroup)**(`previousName`: `string`, `newName`: `string`): `void`   |
 | 重命名碰撞组|
 | **[setCollisionBetweenGroups](mw.PhysicsService.md#setcollisionbetweengroups)**(`group1`: `string`, `group2`: `string`, `collidable`: `boolean`): `void`   |
@@ -48,9 +48,9 @@
 | **[sphereOverlap](mw.PhysicsService.md#sphereoverlap)**(`spherePos`: [`Vector`](mw.Vector.md), `sphereRadius`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`GameObject`](mw.GameObject.md)[]   |
 | 返回一个与给定球体重叠的对象数组|
 | **[sphereTraceMulti](mw.PhysicsService.md#spheretracemulti)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `radius`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)[]   |
-| 沿着给定的直线扫过一个球体，并返回所有命中，包括第一次拦截命中。|
+| 球体沿着给定的路径扫过一个空间，直到首次在起点球体空间之外遇到阻挡命中时结束（球体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。|
 | **[sphereTraceSingle](mw.PhysicsService.md#spheretracesingle)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `radius`: `number`, `collisionParams`: [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md), `renderParams`: [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md)): [`HitResult`](mw.HitResult.md)   |
-| 沿着给定的线扫过一个球体，并返回遇到的第一个阻挡命中。|
+| 球体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。|
 
 ## Accessors
 
@@ -222,14 +222,14 @@ ___
 
 • `Static` **boxTraceMulti**(`start`, `end`, `halfSize`, `orientation`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md)[] 
 
-沿着给定的路线扫描一个盒体，并返回遇到的所有命中，包括第一次拦截命中。
+盒体沿着给定的路径扫过一个空间，直到首次在起点盒体空间之外遇到阻挡命中时结束（盒体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 |
+| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 range: 无 |
 | `orientation` [`Rotation`](mw.Rotation.md) |  旋转大小 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
@@ -256,14 +256,14 @@ ___
 
 • `Static` **boxTraceSingle**(`start`, `end`, `halfSize`, `orientation`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md) 
 
-沿着给定的线扫过一个盒体，并返回遇到的第一个阻挡命中。
+盒体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 |
+| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 range: 无 |
 | `orientation` [`Rotation`](mw.Rotation.md) |  旋转大小 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
@@ -293,8 +293,8 @@ ___
 
 | `capsulePos` [`Vector`](mw.Vector.md) | 检测位置 |
 | :------ | :------ |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` | 胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` | 胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 碰撞查询渲染参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -320,15 +320,15 @@ ___
 
 • `Static` **capsuleTraceMulti**(`start`, `end`, `radius`, `halfHeight`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md)[] 
 
-沿着给定的路线扫描一个胶囊，并返回遇到的所有命中，包括第一次拦截命中。
+胶囊体沿着给定的路径扫过一个空间，直到首次在起点胶囊体空间之外遇到阻挡命中时结束（胶囊体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` |  胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` |  胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -354,15 +354,15 @@ ___
 
 • `Static` **capsuleTraceSingle**(`start`, `end`, `radius`, `halfHeight`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md) 
 
-沿着给定的线扫过一个胶囊体，并返回遇到的第一个阻挡命中。
+胶囊体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` |  胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` |  胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -582,7 +582,7 @@ ___
 
 • `Static` **lineTraceMulti**(`start`, `end`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md)[] 
 
-沿着给定的行执行碰撞跟踪，并返回遇到的所有命中，直到并包括第一次阻塞命中。
+沿着给定的路径进行射线追踪，直到首次遇到阻挡命中时结束，返回沿途遇到的所有命中。
 
 #### Parameters
 
@@ -614,7 +614,7 @@ ___
 
 • `Static` **lineTraceSingle**(`start`, `end`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md) 
 
-沿着给定的线进行碰撞追踪，并返回遇到的第一个阻挡命中。
+沿着给定的路径进行射线追踪，并返回遇到的第一个阻挡命中。
 
 #### Parameters
 
@@ -754,7 +754,7 @@ ___
 
 | `spherePos` [`Vector`](mw.Vector.md) | 检测位置 |
 | :------ | :------ |
-| `sphereRadius` `number` | 球半径 |
+| `sphereRadius` `number` | 球半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 碰撞查询渲染参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -780,14 +780,14 @@ ___
 
 • `Static` **sphereTraceMulti**(`start`, `end`, `radius`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md)[] 
 
-沿着给定的直线扫过一个球体，并返回所有命中，包括第一次拦截命中。
+球体沿着给定的路径扫过一个空间，直到首次在起点球体空间之外遇到阻挡命中时结束（球体在起点时重叠的阻挡对象不包含在首次判定中），返回沿途遇到的所有命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  球形半径 |
+| `radius` `number` |  球形半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -813,14 +813,14 @@ ___
 
 • `Static` **sphereTraceSingle**(`start`, `end`, `radius`, `collisionParams`, `renderParams`): [`HitResult`](mw.HitResult.md) 
 
-沿着给定的线扫过一个球体，并返回遇到的第一个阻挡命中。
+球体沿着给定的路径扫过一个空间，并返回遇到的第一个阻挡命中。
 
 #### Parameters
 
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  球形半径 |
+| `radius` `number` |  球形半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 

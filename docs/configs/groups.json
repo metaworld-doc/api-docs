@@ -446,6 +446,15 @@
       }
     },
     "no_children_files": {
+      "TreeViewItemDataBase": {
+        "file": {
+          "file_name": "mw.TreeViewItemDataBase.md",
+          "file_path": "classes/mw.TreeViewItemDataBase.md",
+          "name": "TreeViewItemDataBase"
+        },
+        "no_children_files": null,
+        "children": null
+      },
       "TabGroup": {
         "file": {
           "file_name": "mw.TabGroup.md",
@@ -491,6 +500,93 @@
       "name": "玩法"
     },
     "children": {
+      "物理": {
+        "file": null,
+        "children": null,
+        "no_children_files": {
+          "RenderQueryParams": {
+            "file": {
+              "file_name": "mw.RenderQueryParams.md",
+              "file_path": "interfaces/mw.RenderQueryParams.md",
+              "name": "RenderQueryParams"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "CollisionQueryParams": {
+            "file": {
+              "file_name": "mw.CollisionQueryParams.md",
+              "file_path": "interfaces/mw.CollisionQueryParams.md",
+              "name": "CollisionQueryParams"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "IntegratedMover": {
+            "file": {
+              "file_name": "mw.IntegratedMover.md",
+              "file_path": "classes/mw.IntegratedMover.md",
+              "name": "IntegratedMover"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "PhysicsService": {
+            "file": {
+              "file_name": "mw.PhysicsService.md",
+              "file_path": "classes/mw.PhysicsService.md",
+              "name": "PhysicsService"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "RigidConstraint": {
+            "file": {
+              "file_name": "mw.RigidConstraint.md",
+              "file_path": "classes/mw.RigidConstraint.md",
+              "name": "RigidConstraint"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "PhysicsThruster": {
+            "file": {
+              "file_name": "mw.PhysicsThruster.md",
+              "file_path": "classes/mw.PhysicsThruster.md",
+              "name": "PhysicsThruster"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "Model": {
+            "file": {
+              "file_name": "mw.Model.md",
+              "file_path": "classes/mw.Model.md",
+              "name": "Model"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "ForceVolume": {
+            "file": {
+              "file_name": "mw.ForceVolume.md",
+              "file_path": "classes/mw.ForceVolume.md",
+              "name": "ForceVolume"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "Impulse": {
+            "file": {
+              "file_name": "mw.Impulse.md",
+              "file_path": "classes/mw.Impulse.md",
+              "name": "Impulse"
+            },
+            "no_children_files": null,
+            "children": null
+          }
+        }
+      },
       "摄像机": {
         "file": null,
         "children": null,
@@ -665,75 +761,6 @@
           }
         }
       },
-      "物理": {
-        "file": null,
-        "children": null,
-        "no_children_files": {
-          "IntegratedMover": {
-            "file": {
-              "file_name": "mw.IntegratedMover.md",
-              "file_path": "classes/mw.IntegratedMover.md",
-              "name": "IntegratedMover"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "PhysicsService": {
-            "file": {
-              "file_name": "mw.PhysicsService.md",
-              "file_path": "classes/mw.PhysicsService.md",
-              "name": "PhysicsService"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "RigidConstraint": {
-            "file": {
-              "file_name": "mw.RigidConstraint.md",
-              "file_path": "classes/mw.RigidConstraint.md",
-              "name": "RigidConstraint"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "PhysicsThruster": {
-            "file": {
-              "file_name": "mw.PhysicsThruster.md",
-              "file_path": "classes/mw.PhysicsThruster.md",
-              "name": "PhysicsThruster"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "Model": {
-            "file": {
-              "file_name": "mw.Model.md",
-              "file_path": "classes/mw.Model.md",
-              "name": "Model"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "ForceVolume": {
-            "file": {
-              "file_name": "mw.ForceVolume.md",
-              "file_path": "classes/mw.ForceVolume.md",
-              "name": "ForceVolume"
-            },
-            "no_children_files": null,
-            "children": null
-          },
-          "Impulse": {
-            "file": {
-              "file_name": "mw.Impulse.md",
-              "file_path": "classes/mw.Impulse.md",
-              "name": "Impulse"
-            },
-            "no_children_files": null,
-            "children": null
-          }
-        }
-      },
       "触发器": {
         "file": null,
         "children": null,
@@ -882,6 +909,77 @@
     },
     "no_children_files": null
   },
+  "设置": {
+    "file": {
+      "file_name": "设置.设置.md",
+      "file_path": "groups/设置.设置.md",
+      "name": "设置"
+    },
+    "children": {
+      "设置面板": {
+        "file": null,
+        "children": null,
+        "no_children_files": {
+          "SettingService": {
+            "file": {
+              "file_name": "mw.SettingService.md",
+              "file_path": "classes/mw.SettingService.md",
+              "name": "SettingService"
+            },
+            "no_children_files": null,
+            "children": null
+          }
+        }
+      }
+    },
+    "no_children_files": {
+      "RoomSettings": {
+        "file": {
+          "file_name": "mw.RoomSettings.md",
+          "file_path": "classes/mw.RoomSettings.md",
+          "name": "RoomSettings"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "EnvironmentSettings": {
+        "file": {
+          "file_name": "mw.EnvironmentSettings.md",
+          "file_path": "classes/mw.EnvironmentSettings.md",
+          "name": "EnvironmentSettings"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "AvatarSettings": {
+        "file": {
+          "file_name": "mw.AvatarSettings.md",
+          "file_path": "classes/mw.AvatarSettings.md",
+          "name": "AvatarSettings"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "GraphicsSettings": {
+        "file": {
+          "file_name": "mw.GraphicsSettings.md",
+          "file_path": "classes/mw.GraphicsSettings.md",
+          "name": "GraphicsSettings"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "ScriptingSettings": {
+        "file": {
+          "file_name": "mw.ScriptingSettings.md",
+          "file_path": "classes/mw.ScriptingSettings.md",
+          "name": "ScriptingSettings"
+        },
+        "no_children_files": null,
+        "children": null
+      }
+    }
+  },
   "工具": {
     "file": {
       "file_name": "工具.工具.md",
@@ -962,6 +1060,15 @@
           "file_name": "mw.DebugUtil.md",
           "file_path": "classes/mw.DebugUtil.md",
           "name": "DebugUtil"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "LocaleUtil": {
+        "file": {
+          "file_name": "mw.LocaleUtil.md",
+          "file_path": "classes/mw.LocaleUtil.md",
+          "name": "LocaleUtil"
         },
         "no_children_files": null,
         "children": null
@@ -1356,77 +1463,6 @@
       }
     }
   },
-  "设置": {
-    "file": {
-      "file_name": "设置.设置.md",
-      "file_path": "groups/设置.设置.md",
-      "name": "设置"
-    },
-    "children": {
-      "设置面板": {
-        "file": null,
-        "children": null,
-        "no_children_files": {
-          "SettingService": {
-            "file": {
-              "file_name": "mw.SettingService.md",
-              "file_path": "classes/mw.SettingService.md",
-              "name": "SettingService"
-            },
-            "no_children_files": null,
-            "children": null
-          }
-        }
-      }
-    },
-    "no_children_files": {
-      "RoomSettings": {
-        "file": {
-          "file_name": "mw.RoomSettings.md",
-          "file_path": "classes/mw.RoomSettings.md",
-          "name": "RoomSettings"
-        },
-        "no_children_files": null,
-        "children": null
-      },
-      "EnvironmentSettings": {
-        "file": {
-          "file_name": "mw.EnvironmentSettings.md",
-          "file_path": "classes/mw.EnvironmentSettings.md",
-          "name": "EnvironmentSettings"
-        },
-        "no_children_files": null,
-        "children": null
-      },
-      "AvatarSettings": {
-        "file": {
-          "file_name": "mw.AvatarSettings.md",
-          "file_path": "classes/mw.AvatarSettings.md",
-          "name": "AvatarSettings"
-        },
-        "no_children_files": null,
-        "children": null
-      },
-      "GraphicsSettings": {
-        "file": {
-          "file_name": "mw.GraphicsSettings.md",
-          "file_path": "classes/mw.GraphicsSettings.md",
-          "name": "GraphicsSettings"
-        },
-        "no_children_files": null,
-        "children": null
-      },
-      "ScriptingSettings": {
-        "file": {
-          "file_name": "mw.ScriptingSettings.md",
-          "file_path": "classes/mw.ScriptingSettings.md",
-          "name": "ScriptingSettings"
-        },
-        "no_children_files": null,
-        "children": null
-      }
-    }
-  },
   "输入": {
     "file": {
       "file_name": "输入.输入.md",
@@ -1449,6 +1485,15 @@
           "file_name": "mw.ConvertScreenResult.md",
           "file_path": "classes/mw.ConvertScreenResult.md",
           "name": "ConvertScreenResult"
+        },
+        "no_children_files": null,
+        "children": null
+      },
+      "GestureDelegate": {
+        "file": {
+          "file_name": "mw.GestureDelegate.md",
+          "file_path": "classes/mw.GestureDelegate.md",
+          "name": "GestureDelegate"
         },
         "no_children_files": null,
         "children": null
@@ -1657,6 +1702,15 @@
               "file_name": "mw.AccountService.md",
               "file_path": "classes/mw.AccountService.md",
               "name": "AccountService"
+            },
+            "no_children_files": null,
+            "children": null
+          },
+          "RouteService": {
+            "file": {
+              "file_name": "mw.RouteService.md",
+              "file_path": "classes/mw.RouteService.md",
+              "name": "RouteService"
             },
             "no_children_files": null,
             "children": null

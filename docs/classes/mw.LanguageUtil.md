@@ -7,23 +7,23 @@
 ## Table of contents
 
 ### Methods <Score text="Methods" /> 
-| **[addKey](mw.LanguageUtil.md#addkey)**(`textkey`: `string`): `string` <Badge type="tip" text="other" />  |
+| **[addKey](mw.LanguageUtil.md#addkey)**(`textkey`: `string`): `string` <Badge type="tip" text="client" />  |
 | :-----|
 | 多语言标记|
 | **[getDefaultLocale](mw.LanguageUtil.md#getdefaultlocale)**(): `string`   |
 | 获取默认的语言和地区|
-| **[getText](mw.LanguageUtil.md#gettext)**(`textkey`: `string`): `string` <Badge type="tip" text="other" />  |
+| **[getText](mw.LanguageUtil.md#gettext)**(`textkey`: `string`): `string` <Badge type="tip" text="client" />  |
 | 根据key获取翻译内容|
-| **[getlanguage](mw.LanguageUtil.md#getlanguage)**(): [`LanguageCodeType`](../enums/mw.LanguageCodeType.md) <Badge type="tip" text="other" />  |
+| **[getlanguage](mw.LanguageUtil.md#getlanguage)**(): [`LanguageCodeType`](../enums/mw.LanguageCodeType.md) <Badge type="tip" text="client" />  |
 | 获取当前本地化语言|
-| **[setLanguage](mw.LanguageUtil.md#setlanguage)**(`type`: [`LanguageCodeType`](../enums/mw.LanguageCodeType.md)): `boolean` <Badge type="tip" text="other" />  |
+| **[setLanguage](mw.LanguageUtil.md#setlanguage)**(`type`: [`LanguageCodeType`](../enums/mw.LanguageCodeType.md)): `boolean` <Badge type="tip" text="client" />  |
 | 游戏语言设置|
 
 ## Methods
 
 ### addKey <Score text="addKey" /> 
 
-• `Static` **addKey**(`textkey`): `string` <Badge type="tip" text="other" />
+• `Static` **addKey**(`textkey`): `string` <Badge type="tip" text="client" />
 
 多语言标记
 
@@ -75,7 +75,7 @@ ___
 
 ### getText <Score text="getText" /> 
 
-• `Static` **getText**(`textkey`): `string` <Badge type="tip" text="other" />
+• `Static` **getText**(`textkey`): `string` <Badge type="tip" text="client" />
 
 根据key获取翻译内容
 
@@ -93,7 +93,7 @@ ___
 
 ### getlanguage <Score text="getlanguage" /> 
 
-• `Static` **getlanguage**(): [`LanguageCodeType`](../enums/mw.LanguageCodeType.md) <Badge type="tip" text="other" />
+• `Static` **getlanguage**(): [`LanguageCodeType`](../enums/mw.LanguageCodeType.md) <Badge type="tip" text="client" />
 
 获取当前本地化语言
 
@@ -106,7 +106,7 @@ ___
 
 ### setLanguage <Score text="setLanguage" /> 
 
-• `Static` **setLanguage**(`type`): `boolean` <Badge type="tip" text="other" />
+• `Static` **setLanguage**(`type`): `boolean` <Badge type="tip" text="client" />
 
 游戏语言设置
 

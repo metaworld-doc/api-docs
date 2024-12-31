@@ -26,7 +26,7 @@ UI 的驱动脚本基类
 
 - 使用 UIService 帮你管理此脚本，当 UIService.create 并 show 时，会启动脚本的生命周期。
 
-- 使用 UIPrefab 。脚本挂载在 UIPrefab 上，并把 UIPrefab 放在对象管理器中。
+- 使用 UIPrefab。脚本挂载在 UIPrefab 上，并把 UIPrefab 放在对象管理器中。
 
 ## Hierarchy
 

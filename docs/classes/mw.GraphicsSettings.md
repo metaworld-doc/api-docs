@@ -178,7 +178,7 @@ ___
 
 #### Parameters
 
-| `FSRLevel` `number` | FSR等级 |
+| `FSRLevel` `number` | FSR等级 type: 整形 range: 无 |
 | :------ | :------ |
 
 
@@ -192,6 +192,6 @@ ___
 
 #### Parameters
 
-| `sharpness` `number` | 锐化程度 0-1 |
+| `sharpness` `number` | 锐化程度 range:[0, 1] type: 浮点型 |
 | :------ | :------ |
 

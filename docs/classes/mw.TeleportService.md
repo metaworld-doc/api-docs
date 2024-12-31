@@ -29,7 +29,7 @@
 
 #### Parameters
 
-| `userId` `string` | 目标玩家的userId |
+| `userId` `string` | 目标玩家的userId range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -82,7 +82,7 @@ ___
 
 #### Parameters
 
-| `roomId` `string` | 要传送的目标游戏Id |
+| `roomId` `string` | 要传送的目标游戏Id range: 无 |
 | :------ | :------ |
 | `userIds` `string`[] | 要传送的玩家userId数组 |
 | `options?` [`TeleportOptions`](../interfaces/mw.TeleportOptions.md) | 可选的额外传送信息. 不支持 createNewPrivateRoom 参数，设置为true也不会创建新房间 default:undefined |
@@ -108,19 +108,6 @@ ___
 使用示例:创建一个名为"TeleportScript"的脚本，放在场景中，设置为双端。代码如下：
 </span>
 
-
-#### Parameters
-
-| `gameId` | `string` |
-| :------ | :------ |
-| `userIds` | `string`[] |
-| `sceneName?` | `string` |
-| `options?` | [`TeleportOptions`](../interfaces/mw.TeleportOptions.md) |
-
-#### Returns
-
-| `Promise`<[`TeleportResult`](../interfaces/mw.TeleportResult.md)\> |  |
-| :------ | :------ |
 ```ts
 @Component
 export default class TeleportScript extends Script {
@@ -175,18 +162,17 @@ export default class TeleportScript extends Script {
                     })
                 }, 5 * 1000);
             });
+        } else {
+            // 客户端逻辑
+            Event.addServerListener("TeleportResult", (result: mw.TeleportResult) => {
+                console.error(`Teleport has error:`);
+                console.error(`errorCode: ${result.errorCode}`);
+                console.error(`message: ${result.message}`);
+            });
+        }
+    }
+}
 ```
-#### Parameters
-
-| `roomId` `string` | 要传送的目标游戏Id |
-| :------ | :------ |
-| `userIds` `string`[] | 要传送的玩家userId数组 |
-| `options?` [`TeleportOptions`](../interfaces/mw.TeleportOptions.md) | 可选的额外传送信息. 不支持 createNewPrivateRoom 参数，设置为true也不会创建新房间 default:undefined |
-
-#### Returns
-
-| `Promise`<[`TeleportResult`](../interfaces/mw.TeleportResult.md)\> | 本次请求正常则返回resolve，异常则返回reject |
-| :------ | :------ |
 
 ___
 
@@ -198,7 +184,7 @@ ___
 
 #### Parameters
 
-| `sceneName` `string` | 要传送的目标场景名称 |
+| `sceneName` `string` | 要传送的目标场景名称 range: 无 |
 | :------ | :------ |
 | `userIds` `string`[] | 要传送的玩家 userId 数组 |
 | `options?` [`TeleportOptions`](../interfaces/mw.TeleportOptions.md) | 可选的额外传送信息 default:undefined |
@@ -239,7 +225,7 @@ export default class TeleportScript extends Script {
                     // 声明成功和失败的回调函数，用于处理传送接口的回调结果。
                     // 成功的情况一般不需要处理，会继续走后续跳转流程。
                     // 如果失败了，有可能是超时或者有报错，可以从回调的数据中读取信息做进一步处理。
-                    const onSuccess = () => `{ }`
+                    const onSuccess = () => { }
                     const onFailed = (result: mw.TeleportResult) => {
                         switch (result.status) {
                             case mw.TeleportStatus.success:
@@ -269,8 +255,8 @@ export default class TeleportScript extends Script {
             // 客户端逻辑
             Event.addServerListener("TeleportResult", (result: mw.TeleportResult) => {
                 console.error(`Teleport has error:`);
-                console.error(`errorCode: $`{result.errorCode}``);
-                console.error(`message: $`{result.message}``);
+                console.error(`errorCode: ${result.errorCode}`);
+                console.error(`message: ${result.message}`);
             });
         }
     }
@@ -287,7 +273,7 @@ ___
 
 #### Parameters
 
-| `teleportId` `string` | 要查询的传送Id |
+| `teleportId` `string` | 要查询的传送Id range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -310,8 +296,8 @@ export default class Server extends Script {
                 const sourceInfo = TeleportService.getSourceInfo(player.teleportId);
                 if (sourceInfo) {
                     console.log("Teleport from:");
-                    console.log(`GameId: $`{sourceInfo.gameId}``);
-                    console.log(`RoomId: $`{sourceInfo.roomId}``);
+                    console.log(`GameId: ${sourceInfo.gameId}`);
+                    console.log(`RoomId: ${sourceInfo.roomId}`);
                 } else {
                     // 不是传送进入的当前场景，则没有来源信息
                     console.log("Not join by Teleport.")
@@ -332,7 +318,7 @@ ___
 
 #### Parameters
 
-| `teleportId` `string` | 要查询的传送Id |
+| `teleportId` `string` | 要查询的传送Id range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -354,7 +340,7 @@ export default class Server extends Script {
                 // 用玩家的teleportId属性来查询传送时携带的数据
                 const data = TeleportService.getTeleportData(player.teleportId);
                 if (data) {
-                    console.log(`Teleport data: $`{data}``);
+                    console.log(`Teleport data: ${data}`);
                 } else {
                     // 不是传送进入的当前场景，则没有携带的数据；也可能是传送时未指定数据
                     console.log("Not join by Teleport or no data.")

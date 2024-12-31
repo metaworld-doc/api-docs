@@ -53,8 +53,10 @@ Camera 对象如何工作？
 
 
 ### Accessors <Score text="Accessors" /> 
-| **[downAngleLimit](mw.Camera.md#downanglelimit)**(): `number` <Badge type="tip" text="client" />  |
+| **[aspectRatioAxisConstraint](mw.Camera.md#aspectratioaxisconstraint)**(): [`AspectRatioAxisConstraint`](../enums/mw.AspectRatioAxisConstraint.md) <Badge type="tip" text="client" />  |
 | :-----|
+| 获取横纵比约束|
+| **[downAngleLimit](mw.Camera.md#downanglelimit)**(): `number` <Badge type="tip" text="client" />  |
 | 获取摄像机向下角度限制|
 | **[fadeObstructionEnabled](mw.Camera.md#fadeobstructionenabled)**(): `boolean` <Badge type="tip" text="client" />  |
 | 获取是否启用透明效果|
@@ -64,6 +66,8 @@ Camera 对象如何工作？
 | 固定摄像机高度|
 | **[fov](mw.Camera.md#fov)**(): `number` <Badge type="tip" text="client" />  |
 | 获取摄像机视场|
+| **[isFrameCaptured](mw.Camera.md#isframecaptured)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取是否每帧捕获|
 | **[maxLagDistance](mw.Camera.md#maxlagdistance)**(): `number` <Badge type="tip" text="client" />  |
 | 位置最大延迟距离|
 | **[positionLagEnabled](mw.Camera.md#positionlagenabled)**(): `boolean` <Badge type="tip" text="client" />  |
@@ -88,10 +92,8 @@ Camera 对象如何工作？
 
 ::: details click
 ### Accessors <Score text="Accessors" /> 
-| **[actorFlagValue](mw.GameObject.md#actorflagvalue)**(): `number` <Badge type="tip" text="other" />  |
-| :-----|
-| 获取对象标记|
 | **[actorLevel](mw.GameObject.md#actorlevel)**(): `number` <Badge type="tip" text="other" />  |
+| :-----|
 | 获取Actor等级|
 | **[assetId](mw.GameObject.md#assetid)**(): `string`   |
 | 获取当前物体使用资源的GUID|
@@ -109,6 +111,8 @@ Camera 对象如何工作？
 | 获取当前物体同步状态|
 | **[parent](mw.GameObject.md#parent)**(): [`GameObject`](mw.GameObject.md)   |
 | 获取当前父物体|
+| **[sceneCaptureTag](mw.GameObject.md#scenecapturetag)**(): `string`   |
+| 获取当前物体的捕捉标签|
 | **[tag](mw.GameObject.md#tag)**(): `string`   |
 | 获取当前物体的标签|
 | **[worldTransform](mw.GameObject.md#worldtransform)**(): [`Transform`](mw.Transform.md)   |
@@ -157,8 +161,6 @@ Camera 对象如何工作？
 | 根据路径查找子物体|
 | **[getChildren](mw.GameObject.md#getchildren)**(): [`GameObject`](mw.GameObject.md)[]   |
 | 获取子物体|
-| **[getChildrenBoundingBoxCenter](mw.GameObject.md#getchildrenboundingboxcenter)**(`outer?`: [`Vector`](mw.Vector.md)): [`Vector`](mw.Vector.md)   |
-| 获取所有子对象包围盒中心点(不包含父对象,父对象不可用返回[0,0,0])|
 | **[getChildrenByName](mw.GameObject.md#getchildrenbyname)**(`name`: `string`): [`GameObject`](mw.GameObject.md)[]   |
 | 通过名字查找所有的子物体|
 | **[getComponent](mw.GameObject.md#getcomponent)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>   |
@@ -168,11 +170,11 @@ Camera 对象如何工作？
 | **[getComponents](mw.GameObject.md#getcomponents)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>[]   |
 | 获取指定类型的所有组件|
 | **[getCustomProperties](mw.GameObject.md#getcustomproperties)**(): `string`[]   |
-| 获取所有自定义属性|
+| 获取自定义属性名字数组，返回对象所有自定义属性。|
 | **[getCustomProperty](mw.GameObject.md#getcustomproperty)**<`T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)\>(`propertyName`: `string`): `T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)   |
-| 获取自定义属性|
-| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
-| 给定对象属性修改时触发的事件代理|
+| 获取自定义属性的值，服务器客户端均可调用，客户端调用需注意属性同步的延迟。|
+| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
+| 获取给定自定义属性修改时触发的事件代理。双端对象在服务器修改自定义属性后，双端均会触发事件并执行绑定函数。|
 | **[getVisibility](mw.GameObject.md#getvisibility)**(): `boolean`   |
 | 获取物体是否被显示|
 | **[isPrefabActor](mw.GameObject.md#isprefabactor)**(): `boolean`   |
@@ -191,8 +193,8 @@ Camera 对象如何工作？
 | 在指定时间内从当前缩放平滑变化至目标缩放|
 | **[setAbsolute](mw.GameObject.md#setabsolute)**(`absolutePosition?`: `boolean`, `absoluteRotation?`: `boolean`, `absoluteScale?`: `boolean`): `void`   |
 | 设置物体localTransform是相对于父物体或者世界|
-| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void`   |
-| 设置自定义属性|
+| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void` <Badge type="tip" text="server" />  |
+| 设置自定义属性的值，双端对象需在服务器调用。当设置的属性不存在时会新增自定义属性。|
 | **[setVisibility](mw.GameObject.md#setvisibility)**(`status`: `boolean`  [`PropertyStatus`](../enums/mw.PropertyStatus.md), `propagateToChildren?`: `boolean`): `void`   |
 | 设置物体是否被显示|
 | **[stopMove](mw.GameObject.md#stopmove)**(): `void` <Badge type="tip" text="other" />  |
@@ -336,6 +338,96 @@ i++) {
 
 ## Accessors
 
+___
+
+### aspectRatioAxisConstraint <Score text="aspectRatioAxisConstraint" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **aspectRatioAxisConstraint**(): [`AspectRatioAxisConstraint`](../enums/mw.AspectRatioAxisConstraint.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **aspectRatioAxisConstraint**(`value`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取横纵比约束
+
+::: warning Precautions
+
+设置FOV是约束X轴方向视角角度还是Y轴方向视角角度
+
+:::
+
+
+#### Returns
+
+| [`AspectRatioAxisConstraint`](../enums/mw.AspectRatioAxisConstraint.md) |  |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置透明度
+
+::: warning Precautions
+
+范围0-1，值越大透明度越高，1是完全透明
+
+:::
+
+#### Parameters
+
+| `value` | [`AspectRatioAxisConstraint`](../enums/mw.AspectRatioAxisConstraint.md) |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+<span style="font-size: 14px;">
+使用示例: 创建一个名为"Example_Camera_AspectRatioAxisConstraint"的脚本，放置在对象栏中，打开脚本，输入以下代码保存，运行游戏，代码如下：
+</span>
+
+```ts
+@Component
+export default class Example_Camera_AspectRatioAxisConstraint extends Script {
+    // 当脚本被实例后，会在第一帧更新前调用此函数
+    protected onStart(): void {
+        // 下列代码仅在客户端执行
+        if(SystemUtil.isClient()) {
+            // 获取当前客户端的玩家(自己)
+            let myPlayer = Player.localPlayer;
+            // 获取玩家角色
+            let myCharacter = myPlayer.character;
+            // 获取当前摄像机
+            let myCamera = Camera.currentCamera;
+            // 开启透明效果
+            myCamera.transparencyEnabled = true;
+            // 添加一个按键方法：按下键盘“1”，设置为保持X轴FOV
+            InputUtil.onKeyDown(Keys.One, () => {
+                myCamera.aspectRatioAxisConstraint = AspectRatioAxisConstraint.maintainXFOV;
+            });
+            // 添加一个按键方法：按住键盘“2”，设置为保持Y轴FOV
+            InputUtil.onKeyPress(Keys.Two, () => {
+                myCamera.aspectRatioAxisConstraint = AspectRatioAxisConstraint.maintainYFOV;
+            });
+        }
+    }
+}
+```
 ___
 
 ### downAngleLimit <Score text="downAngleLimit" /> 
@@ -806,6 +898,101 @@ export default class Example_Camera_FOV extends Script {
             // 添加一个按键方法：按住键盘“3”，减少摄像机FOV
             InputUtil.onKeyPress(Keys.Three, () => {
                 myCamera.fov -= 1;
+            });
+        }
+    }
+}
+```
+___
+
+### isFrameCaptured <Score text="isFrameCaptured" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **isFrameCaptured**(): `boolean` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **isFrameCaptured**(`value`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取是否每帧捕获
+
+::: warning Precautions
+
+false时只会捕获一次，节省性能
+
+:::
+
+
+#### Returns
+
+| `boolean` |  |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置是否每帧捕获
+
+::: warning Precautions
+
+false时只会捕获一次，节省性能
+
+:::
+
+#### Parameters
+
+| `value` | `boolean` |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+<span style="font-size: 14px;">
+使用示例: 创建一个名为"Example_Camera_FrameCaptured"的脚本，放置在对象栏中，打开脚本，输入以下代码保存，在UI编辑器中添加图片，运行游戏，代码如下：
+</span>
+
+```ts
+@Component
+export default class Example_Camera_FrameCaptured extends Script {
+    // 当脚本被实例后，会在第一帧更新前调用此函数
+    private camera: Camera;
+    protected onStart(): void {
+        // 下列代码仅在客户端执行
+        if(SystemUtil.isClient()) {
+            // 获取当前客户端的玩家(自己)
+            let myPlayer = Player.localPlayer;
+            // 获取玩家角色
+            let myCharacter = myPlayer.character;
+            // 生成摄像机
+            GameObject.asyncSpawn("Camera").then((obj)=>{
+               this.camera = obj as Camera;
+            })
+            // 获取UI图片
+            const image = this.uiWidgetBase.findChildByPath('RootCanvas/Image') as Image
+            // 设置图片来源为生成的摄像机
+            image.currentCamera = this.camera;
+            // 添加一个按键方法：按下键盘“1”，开启每帧捕获
+            InputUtil.onKeyDown(Keys.One, () => {
+                myCamera.isFrameCaptured = true;
+            });
+            // 添加一个按键方法：按住键盘“2”，关闭每帧捕获
+            InputUtil.onKeyPress(Keys.Two, () => {
+                myCamera.isFrameCaptured = false;
             });
         }
     }

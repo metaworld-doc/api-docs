@@ -29,11 +29,15 @@
 
 • **CircularIn** = ``8``
 
+Circular-in interpolation
+
 ___
 
 ### CircularInOut <Score text="CircularInOut" /> 
 
 • **CircularInOut** = ``10``
+
+Circular in-out interpolation
 
 ___
 
@@ -41,11 +45,15 @@ ___
 
 • **CircularOut** = ``9``
 
+Circular-out interpolation
+
 ___
 
 ### Cubic <Score text="Cubic" /> 
 
 • **Cubic** = ``1``
+
+Cubic-in interpolation
 
 ___
 
@@ -53,11 +61,15 @@ ___
 
 • **CubicInOut** = ``5``
 
+Cubic in-out interpolation
+
 ___
 
 ### ExpIn <Score text="ExpIn" /> 
 
 • **ExpIn** = ``11``
+
+Exponential-in interpolation
 
 ___
 
@@ -65,11 +77,15 @@ ___
 
 • **ExpInOut** = ``13``
 
+Exponential in-out interpolation
+
 ___
 
 ### ExpOut <Score text="ExpOut" /> 
 
 • **ExpOut** = ``12``
+
+Exponential-Out interpolation
 
 ___
 
@@ -77,11 +93,15 @@ ___
 
 • **HermiteCubic** = ``2``
 
+Hermite-Cubic
+
 ___
 
 ### Linear <Score text="Linear" /> 
 
 • **Linear** = ``0``
+
+Linear interpolation
 
 ___
 
@@ -89,11 +109,15 @@ ___
 
 • **QuadraticInOut** = ``4``
 
+Quadratic in-out interpolation
+
 ___
 
 ### QuarticInOut <Score text="QuarticInOut" /> 
 
 • **QuarticInOut** = ``6``
+
+Quartic in-out interpolation
 
 ___
 
@@ -101,8 +125,12 @@ ___
 
 • **QuinticInOut** = ``7``
 
+Quintic in-out interpolation
+
 ___
 
 ### Sinusoidal <Score text="Sinusoidal" /> 
 
 • **Sinusoidal** = ``3``
+
+Sinusoidal interpolation

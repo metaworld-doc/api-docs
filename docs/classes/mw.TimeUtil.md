@@ -90,7 +90,7 @@ ___
 
 #### Parameters
 
-| `id` `number` |  delayExecute 方法返回的 ID <br> range: 根据 ID 长度而定。 type: 整数 |
+| `id` `number` |  delayExecute 方法返回的 ID <br> range: 根据 ID 长度而定。 type: 整形 |
 | :------ | :------ |
 
 
@@ -178,7 +178,7 @@ ___
 
 | `handler` () => `void` |  执行的方法 |
 | :------ | :------ |
-| `frameNum?` `number` |  要延迟的帧数 default: 1 <br> range: 根据你想要延迟的帧数而定，不做限制。 type: 整数 |
+| `frameNum?` `number` |  要延迟的帧数 default: 1 <br> range: 根据你想要延迟的帧数而定，不做限制。 type: 整形 |
 
 #### Returns
 

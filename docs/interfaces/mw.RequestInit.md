@@ -12,7 +12,7 @@ HTTP请求信息的对象
 | HTTP请求体|
 | **[headers](mw.RequestInit.md#headers)**: `Object`  |
 | HTTP请求头|
-| **[method](mw.RequestInit.md#method)**: ``"GET"``  ``"POST"``  ``"PUT"``  |
+| **[method](mw.RequestInit.md#method)**: ``"POST"``  ``"PUT"``  ``"GET"``  |
 | HTTP请求类型|
 
 ## Properties
@@ -39,6 +39,6 @@ ___
 
 ### method <Score text="method" /> 
 
-• `Optional` **method**: ``"GET"``  ``"POST"``  ``"PUT"``
+• `Optional` **method**: ``"POST"``  ``"PUT"``  ``"GET"``
 
 HTTP请求类型

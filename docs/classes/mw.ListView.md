@@ -127,6 +127,8 @@
 | 获取选中节点的索引|
 | **[getSelectionItems](mw.ListView.md#getselectionitems)**(): [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)[] <Badge type="tip" text="client" />  |
 | 获取选中节点的数据|
+| **[getTouchCanControlThisScroll](mw.ListView.md#gettouchcancontrolthisscroll)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取是否受Touch事件影响滚动|
 | **[insertItem](mw.ListView.md#insertitem)**(`newItem`: [`ListViewItemDataBase`](mw.ListViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="client" />  |
 | 插入项目节点数据，如果位置越界，则自动插入最后|
 | **[removeItem](mw.ListView.md#removeitem)**(`delItem`: [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)): `void` <Badge type="tip" text="client" />  |
@@ -143,6 +145,8 @@
 | 设置节点选中|
 | **[setSelectionItemByIndex](mw.ListView.md#setselectionitembyindex)**(`selectedIndexs`: `number`  `number`[], `selected`: `boolean`, `selectInfo?`: [`SelectInfo`](../enums/mw.SelectInfo.md)): `void` <Badge type="tip" text="client" />  |
 | 根据索引设置节点选中，如果位置越界，则越界对应的操作无效|
+| **[setTouchCanControlThisScroll](mw.ListView.md#settouchcancontrolthisscroll)**(`bCanControl`: `boolean`): `void` <Badge type="tip" text="client" />  |
+| 设置是否受Touch事件影响滚动|
 | **[newObject](mw.ListView.md#newobject)**(`orientation`: [`Orientation`](../enums/mw.Orientation.md), `uiAssetGUID`: `string`, `parent?`: [`Canvas`](mw.Canvas.md), `inName?`: `string`): [`ListView`](mw.ListView.md) <Badge type="tip" text="client" />  |
 | 创建 ListView 控件，当parent和inName与已有的对象相同时，旧的对象会被销毁|
 
@@ -174,6 +178,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -671,7 +677,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 需要查找的数据所在位置 |
+| `index` `number` | 需要查找的数据所在位置 range: 无 type: 整形 |
 | :------ | :------ |
 
 #### Returns
@@ -707,6 +713,19 @@ ___
 
 ___
 
+### getTouchCanControlThisScroll <Score text="getTouchCanControlThisScroll" /> 
+
+• **getTouchCanControlThisScroll**(): `boolean` <Badge type="tip" text="client" />
+
+获取是否受Touch事件影响滚动
+
+#### Returns
+
+| `boolean` | 能否touch能控制滚动 |
+| :------ | :------ |
+
+___
+
 ### insertItem <Score text="insertItem" /> 
 
 • **insertItem**(`newItem`, `index`): `void` <Badge type="tip" text="client" />
@@ -717,7 +736,7 @@ ___
 
 | `newItem` [`ListViewItemDataBase`](mw.ListViewItemDataBase.md) | 需要插入的新数据 |
 | :------ | :------ |
-| `index` `number` | 插入的位置 |
+| `index` `number` | 插入的位置 range: 无 type: 整形 |
 
 
 ___
@@ -744,7 +763,7 @@ ___
 
 #### Parameters
 
-| `delIndex` `number` | 需要移除的数据所在位置 |
+| `delIndex` `number` | 需要移除的数据所在位置 range: 无 type: 整形 |
 | :------ | :------ |
 
 
@@ -797,8 +816,8 @@ ___
 
 | `selectedItems` [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)  [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)[] | 需要修改选中的节点数据 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
 
 
 ___
@@ -813,8 +832,22 @@ ___
 
 | `selectedIndexs` `number`  `number`[] | 需要修改选中的节点所在索引 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
+
+
+___
+
+### setTouchCanControlThisScroll <Score text="setTouchCanControlThisScroll" /> 
+
+• **setTouchCanControlThisScroll**(`bCanControl`): `void` <Badge type="tip" text="client" />
+
+设置是否受Touch事件影响滚动
+
+#### Parameters
+
+| `bCanControl` `boolean` | 能否touch控制滚动 |
+| :------ | :------ |
 
 
 ___
@@ -829,9 +862,9 @@ ___
 
 | `orientation` [`Orientation`](../enums/mw.Orientation.md) |  朝向 |
 | :------ | :------ |
-| `uiAssetGUID` `string` |  设置视图绑定的节点UI |
+| `uiAssetGUID` `string` |  设置视图绑定的节点UI range: 无 |
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
-| `inName?` `string` | 创建控件的名称 default:null |
+| `inName?` `string` | 创建控件的名称 default:null range: 无 default:null |
 
 #### Returns
 

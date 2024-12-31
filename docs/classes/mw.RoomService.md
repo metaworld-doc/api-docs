@@ -33,31 +33,11 @@ ___
 使用示例: 创建一个名为 NewScript 的脚本，放置在对象栏中，打开脚本，将原本内容修改为如下内容，保存并运行游戏，按下 G 键，踢出角色。
 </span>
 
-
-#### Returns
-
-| `boolean` |  |
-| :------ | :------ |
-
-
-#### Parameters
-
-| `resp` | [`MGSResponse`](../modules/Core.mw.md#mgsresponse) |
-| :------ | :------ |
-
-
-
-| `string` |  |
-| :------ | :------ |
-
-#### Returns
-
-| `string` |  |
-| :------ | :------ |
 ```ts
 @Component
 export default class NewScript extends Script {
 
+    protected onStart(): void {
         if(SystemUtil.isServer()) {
             Player.spawnDefaultCharacter();
         }
@@ -77,10 +57,3 @@ export default class NewScript extends Script {
    }
 }
 ```
-
-#### Parameters
-
-| `player` `number`  [`Player`](mw.Player.md) |  踢下线的 Player |
-| :------ | :------ |
-| `message?` `string` |  踢出玩家时触发退出 UI 弹出的信息 default:null range: 提示适合长度的信息即可 |
-

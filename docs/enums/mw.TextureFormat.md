@@ -1,6 +1,8 @@
-[mw](../modules/Core.mw.md) / TextureFormat
+[基础类型](../groups/基础类型.基础类型.md) / TextureFormat
 
 # TextureFormat <Badge type="tip" text="Enumeration" /> <Score text="TextureFormat" />
+
+贴图格式
 
 ## Table of contents
 
@@ -16,14 +18,20 @@
 
 • **Default** = ``0``
 
+Default
+
 ___
 
 ### JPEG <Score text="JPEG" /> 
 
 • **JPEG** = ``2``
 
+JPEG
+
 ___
 
 ### PNG <Score text="PNG" /> 
 
 • **PNG** = ``1``
+
+PNG

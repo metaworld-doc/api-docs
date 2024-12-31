@@ -31,8 +31,12 @@ export default class ClassExample extends Script {
 | 开启或关闭角色优化:通过动态限制骨架网格体组件的tick频率来限制运行动画数据的时间。|
 
 ### Methods <Score text="Methods" /> 
-| **[setOptimization](mw.AvatarSettings.md#setoptimization)**(`character`: [`Character`](mw.Character.md), `useAnimationBudget`: `boolean`, `useWave`: `boolean`): `void` <Badge type="tip" text="client" />  |
+| **[getAvatarForcedLOD](mw.AvatarSettings.md#getavatarforcedlod)**(`character`: [`Character`](mw.Character.md)): `number` <Badge type="tip" text="client" />  |
 | :-----|
+| 获取角色形象细节层次，0 表示  自动切换。 1， 2， 3 表示 3个等级，Level1细节最多。|
+| **[setAvatarForcedLOD](mw.AvatarSettings.md#setavatarforcedlod)**(`character`: [`Character`](mw.Character.md), `level`: `number`): `void` <Badge type="tip" text="client" />  |
+| 设置角色形象细节层次，0 表示  自动切换。 1， 2， 3 表示 3个等级，Level1细节最多。|
+| **[setOptimization](mw.AvatarSettings.md#setoptimization)**(`character`: [`Character`](mw.Character.md), `useAnimationBudget`: `boolean`, `useWave`: `boolean`): `void` <Badge type="tip" text="client" />  |
 | 开启或关闭角色优化:通过动态限制骨架网格体组件的tick频率来限制运行动画数据的时间。|
 
 ## Accessors
@@ -82,6 +86,39 @@ export default class ClassExample extends Script {
 
 
 ## Methods
+
+### getAvatarForcedLOD <Score text="getAvatarForcedLOD" /> 
+
+• `Static` **getAvatarForcedLOD**(`character`): `number` <Badge type="tip" text="client" />
+
+获取角色形象细节层次，0 表示  自动切换。 1， 2， 3 表示 3个等级，Level1细节最多。
+
+#### Parameters
+
+| `character` [`Character`](mw.Character.md) | 角色对象 |
+| :------ | :------ |
+
+#### Returns
+
+| `number` | level usage:Lod等级：0 表示  自动切换。 1， 2， 3 表示 3个等级 |
+| :------ | :------ |
+
+___
+
+### setAvatarForcedLOD <Score text="setAvatarForcedLOD" /> 
+
+• `Static` **setAvatarForcedLOD**(`character`, `level`): `void` <Badge type="tip" text="client" />
+
+设置角色形象细节层次，0 表示  自动切换。 1， 2， 3 表示 3个等级，Level1细节最多。
+
+#### Parameters
+
+| `character` [`Character`](mw.Character.md) | 角色对象 |
+| :------ | :------ |
+| `level` `number` | Lod等级：0 表示 自动切换。 1， 2， 3 表示 3个等级 range:[0, 3] type: 整形 |
+
+
+___
 
 ### setOptimization <Score text="setOptimization" /> 
 

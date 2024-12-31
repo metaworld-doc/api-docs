@@ -96,9 +96,9 @@ UI 画布
 | 画多段线|
 | **[drawSpline](mw.DrawCanvas.md#drawspline)**(`startPoint`: [`Vector2`](mw.Vector2.md), `startDirection`: [`Vector2`](mw.Vector2.md), `endPoint`: [`Vector2`](mw.Vector2.md), `endDirection`: [`Vector2`](mw.Vector2.md), `lineData?`: [`DrawDataBase`](mw.DrawDataBase.md)): `number` <Badge type="tip" text="client" />  |
 | 画埃尔米特曲线|
-| **[drawText](mw.DrawCanvas.md#drawtext)**(`text`: `string`, `position`: [`Vector2`](mw.Vector2.md), `fontSize`: `number`, `fontColor`: `any`, `drawLayerId?`: `number`): `number` <Badge type="tip" text="client" />  |
+| **[drawText](mw.DrawCanvas.md#drawtext)**(`text`: `string`, `position`: [`Vector2`](mw.Vector2.md), `fontSize`: `number`, `fontColor`: [`LinearColor`](mw.LinearColor.md), `drawLayerId?`: `number`): `number` <Badge type="tip" text="client" />  |
 | 画文字|
-| **[removeDrawById](mw.DrawCanvas.md#removedrawbyid)**(`Id`: `number`): `void` <Badge type="tip" text="client" />  |
+| **[removeDrawById](mw.DrawCanvas.md#removedrawbyid)**(`id`: `number`): `void` <Badge type="tip" text="client" />  |
 | 移除指定的绘制图元|
 | **[newObject](mw.DrawCanvas.md#newobject)**(`parent?`: [`Canvas`](mw.Canvas.md), `inName?`: `string`): [`DrawCanvas`](mw.DrawCanvas.md) <Badge type="tip" text="client" />  |
 | 创建绘画控件|
@@ -131,6 +131,8 @@ UI 画布
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -178,7 +180,7 @@ ___
 | `p2` [`Vector2`](mw.Vector2.md) | 第二个点 |
 | `p3` [`Vector2`](mw.Vector2.md) | 第三个点 |
 | `p4` [`Vector2`](mw.Vector2.md) | 第四个点 |
-| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 |
+| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 default: new DrawDataBase() |
 
 #### Returns
 
@@ -198,12 +200,12 @@ ___
 | `vertex` [`UIDrawCustomVertex`](mw.UIDrawCustomVertex.md)[] | 顶点图元数据信息 |
 | :------ | :------ |
 | `index` `number`[] | 顶点图元索引信息 |
-| `assetId?` `string` | - |
-| `drawLayerId?` `number` | - |
+| `assetId?` `string` | UI贴图资源 default: "" range: 无 |
+| `drawLayerId?` `number` | 绘制层级 default: 0 range: 无 type: 整形 |
 
 #### Returns
 
-| `number` |  |
+| `number` | 返回drawId |
 | :------ | :------ |
 
 ___
@@ -218,7 +220,7 @@ ___
 
 | `points` [`Vector2`](mw.Vector2.md)[] | 线的各个点坐标 |
 | :------ | :------ |
-| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 |
+| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 default: new DrawDataBase() |
 
 #### Returns
 
@@ -240,7 +242,7 @@ ___
 | `startDirection` [`Vector2`](mw.Vector2.md) | 开始切线方向 |
 | `endPoint` [`Vector2`](mw.Vector2.md) | 结束点位置 |
 | `endDirection` [`Vector2`](mw.Vector2.md) | 结束点切线方向 |
-| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 |
+| `lineData?` [`DrawDataBase`](mw.DrawDataBase.md) | 绘制图元信息 default: new DrawDataBase() |
 
 #### Returns
 
@@ -257,29 +259,29 @@ ___
 
 #### Parameters
 
-| `text` `string` | - |
+| `text` `string` | 要绘制的文本 range: 无 |
 | :------ | :------ |
 | `position` [`Vector2`](mw.Vector2.md) | 位置 |
-| `fontSize` `number` | 字体大小 |
-| `fontColor` `any` | 颜色 |
-| `drawLayerId?` `number` | 绘制层级 |
+| `fontSize` `number` | 字体大小 type: 整形 range: 无 |
+| `fontColor` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `drawLayerId?` `number` | 绘制层级 default: 0 range: 无 type: 整形 |
 
 #### Returns
 
-| `number` |  |
+| `number` | 返回drawId |
 | :------ | :------ |
 
 ___
 
 ### removeDrawById <Score text="removeDrawById" /> 
 
-• **removeDrawById**(`Id`): `void` <Badge type="tip" text="client" />
+• **removeDrawById**(`id`): `void` <Badge type="tip" text="client" />
 
 移除指定的绘制图元
 
 #### Parameters
 
-| `Id` `number` | 指定的绘制图元Id |
+| `id` `number` | 指定的绘制图元Id type: 整形 range: 无 |
 | :------ | :------ |
 
 

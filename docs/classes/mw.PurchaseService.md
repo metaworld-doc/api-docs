@@ -170,7 +170,7 @@ ___
 
 | `boxId` `string` | 宝箱 ID，代表一种福利，暂时自定义id。后续会在开发者平台配制 range:依据 boxId 长度 |
 | :------ | :------ |
-| `number` `number` | 领取的宝箱数量 <br> default: 1 range: 不做限制 type: 整数 |
+| `number` `number` | 领取的宝箱数量 <br> default: 1 range: 不做限制 type: 整形 |
 | `keyType` `number` | 钥匙类型，当前只有一种钥匙类型值为 1 <br> default: 1 range: 1 type:整数 |
 | `placeOrderResult` (`status`: [`consumeKeyStatus`](../enums/mw.consumeKeyStatus.md)) => `void` | 订单结果。status 大会员扣除钥匙下单状态 |
 
@@ -293,7 +293,7 @@ ___
 
 | `getUserKeyNumberResult` (`keyNumber`: `number`) => `void` | 结果回调，查询到结果后执行回调函数。keyNumber : 剩余钥匙数量 |
 | :------ | :------ |
-| `keyType?` `number` | 搜索的钥匙类型，暂时只有类型 1 <br> default: 1 range: 1 type: 整数 |
+| `keyType?` `number` | 搜索的钥匙类型，暂时只有类型 1 <br> default: 1 range: 1 type: 整形 |
 
 
 <span style="font-size: 14px;">

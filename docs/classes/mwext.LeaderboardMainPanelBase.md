@@ -135,11 +135,11 @@ ___
 
 #### Parameters
 
-| `rankIndex` `number` |  名次索引(0开始) range: 合理即可，不做限制 type: 整数 |
+| `rankIndex` `number` |  名次索引(0开始) range: 合理即可，不做限制 type: 整形 |
 | :------ | :------ |
-| `fieldId` `number` |  字段索引 (如果是排行字段，此参数为mull) range: 合理即可，不做限制 type: 整数 |
-| `fieldValue` `string`  `number` |  字段显示内容 range: 合理即可，不做限制 type: 整数 |
-| `textBlockIndex` `number` |  文本控件索引 range: 合理即可，不做限制 type: 整数 |
+| `fieldId` `number` |  字段索引 (如果是排行字段，此参数为mull) range: 合理即可，不做限制 type: 整形 |
+| `fieldValue` `string`  `number` |  字段显示内容 range: 合理即可，不做限制 type: 整形 |
+| `textBlockIndex` `number` |  文本控件索引 range: 合理即可，不做限制 type: 整形 |
 | `textBlock` [`TextBlock`](mw.TextBlock.md) |  文本控件 |
 
 
@@ -212,8 +212,8 @@ ___
 | `title` `string` |  UI 标题 range: UI 标题信息 |
 | :------ | :------ |
 | `fieldsAutoLayout` `boolean` |  字段是否自动布局(true-均匀分布, false-所摆即所得） |
-| `showPlayerNum` `number` |  最多显示的玩家数量 range:合理即可 type: 整数 |
-| `itemSpacing` `number` |  每条数据的间距 range:合理即可 type: 整数 |
+| `showPlayerNum` `number` |  最多显示的玩家数量 range:合理即可 type: 整形 |
+| `itemSpacing` `number` |  每条数据的间距 range:合理即可 type: 整形 |
 
 #### Returns
 

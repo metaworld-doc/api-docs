@@ -35,7 +35,7 @@
 | **[setUserData](mw.AccountService.md#setuserdata)**(`character`: [`Character`](mw.Character.md), `dataString`: `string`, `callback?`: [`BoolResponse`](../modules/Core.mw.md#boolresponse)): `void` <Badge type="tip" text="client" />  |
 | 将角色形象数据应用至角色|
 | **[uploadData](mw.AccountService.md#uploaddata)**(`character`: [`Character`](mw.Character.md), `callback?`: [`BoolResponse`](../modules/Core.mw.md#boolresponse)  [`VoidResponse`](../modules/Core.mw.md#voidresponse), `index?`: `number`, `openStatus?`: `number`): `void` <Badge type="tip" text="client" />  |
-| 上传角色形象资源到服务器  Character， Hair, UpperCloth, LowerCloth, Gloves, Shoe|
+| 上传角色形象资源到服务器  Character，Hair, UpperCloth, LowerCloth, Gloves, Shoe|
 
 ## Methods
 
@@ -72,7 +72,7 @@ ___
 
 | `character` [`Character`](mw.Character.md) | 分享换装数据的角色 |
 | :------ | :------ |
-| `id` `string` | 分享Id |
+| `id` `string` | 分享Id range: 无 |
 | `callback` [`BoolResponse`](../modules/Core.mw.md#boolresponse) |  回调参数，true:应用成功；false:应用失败 |
 
 
@@ -124,10 +124,10 @@ ___
 
 #### Parameters
 
-| `index` `number` | 资源位(0-5) default:0,主角资源位 |
+| `index` `number` | 角色资源位 default:0（主角资源位） range: [0,5] type: 整形 |
 | :------ | :------ |
 | `isOpen` `boolean` | 是否公开 |
-| `callback?` [`BoolResponse`](../modules/Core.mw.md#boolresponse) | 设置是否成功的回调 default:无回调 |
+| `callback?` [`BoolResponse`](../modules/Core.mw.md#boolresponse) | 设置是否成功的回调 default:无 |
 
 
 ___
@@ -143,7 +143,7 @@ ___
 | `character` [`Character`](mw.Character.md) | 要应用换装数据的角色 |
 | :------ | :------ |
 | `callback?` [`BoolResponse`](../modules/Core.mw.md#boolresponse)  [`VoidResponse`](../modules/Core.mw.md#voidresponse) | 设置是否成功的回调 default:默认没有回调 |
-| `index?` `number` | 角色位(0-5) default:0,主角资源位 |
+| `index?` `number` | 角色资源位 default:0（主角资源位） range: [0,5] type: 整形 |
 
 
 ___
@@ -263,9 +263,9 @@ ___
 
 #### Parameters
 
-| `userId` `string` | 用户Id |
+| `userId` `string` | 用户Id range: 无 |
 | :------ | :------ |
-| `index` `number` | 资源位(0-5) |
+| `index` `number` | 角色资源位 default:0（主角资源位） range: [0,5] type: 整形 |
 | `callback` [`StringResponse`](../modules/Core.mw.md#stringresponse) | 返回获取的数据string. |
 
 
@@ -386,7 +386,7 @@ ___
 
 | `character` [`Character`](mw.Character.md) |  用于换装的角色 |
 | :------ | :------ |
-| `dataString` `string` |  返回的数据 |
+| `dataString` `string` |  返回的数据 range: 无 |
 | `callback?` [`BoolResponse`](../modules/Core.mw.md#boolresponse) | 设置是否成功的回调 default:无回调 |
 
 
@@ -423,13 +423,13 @@ ___
 
 • `Static` **uploadData**(`character`, `callback?`, `index?`, `openStatus?`): `void` <Badge type="tip" text="client" />
 
-上传角色形象资源到服务器  Character， Hair, UpperCloth, LowerCloth, Gloves, Shoe
+上传角色形象资源到服务器  Character，Hair, UpperCloth, LowerCloth, Gloves, Shoe
 
 #### Parameters
 
 | `character` [`Character`](mw.Character.md) | 要上传换装数据的角色 |
 | :------ | :------ |
 | `callback?` [`BoolResponse`](../modules/Core.mw.md#boolresponse)  [`VoidResponse`](../modules/Core.mw.md#voidresponse) | 设置是否成功的回调 default:默认没有回调 |
-| `index?` `number` | 角色位(0-5) default:0,主角资源位 |
-| `openStatus?` `number` | 开发状态 default:1,默认是开放状态 |
+| `index?` `number` | 角色资源位 default:0（主角资源位） range: [0,5] type: 整形 |
+| `openStatus?` `number` | 开放状态 default:1,默认是开放状态 range: [0,1] type: 整形 |
 

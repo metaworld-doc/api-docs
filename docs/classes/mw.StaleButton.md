@@ -66,9 +66,9 @@ class UI_Main extends UIScript {
 
 
 ### Accessors <Score text="Accessors" /> 
-| **[clickMethod](mw.StaleButton.md#clickmethod)**(`inClickMethod`: [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md)): `void` <Badge type="tip" text="client" />  |
+| **[autoAdjust](mw.StaleButton.md#autoadjust)**(): `boolean` <Badge type="tip" text="client" />  |
 | :-----|
-| 设置点击模式|
+| 获取字体是否自适应调整大小:boolean(为True时，文本内容字体大小将自动改变，尽可能大的充满整个文本框，而文本框大小不会变化)|
 | **[contentColor](mw.StaleButton.md#contentcolor)**(): [`LinearColor`](mw.LinearColor.md) <Badge type="tip" text="client" />  |
 | 设置字体内容颜色|
 | **[defaultFont](mw.StaleButton.md#defaultfont)**(): `string`  [`UIFontFamily`](../enums/mw.UIFontFamily.md) <Badge type="tip" text="client" />  |
@@ -97,6 +97,14 @@ class UI_Main extends UIScript {
 | 获取字体大小|
 | **[glyph](mw.StaleButton.md#glyph)**(): [`UIFontGlyph`](../enums/mw.UIFontGlyph.md) <Badge type="tip" text="client" />  |
 | 获取字体字形|
+| **[isRichText](mw.StaleButton.md#isrichtext)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取是否为富文本|
+| **[lineHeightPercentage](mw.StaleButton.md#lineheightpercentage)**(): `number` <Badge type="tip" text="client" />  |
+| 获取行高系数|
+| **[maxSize](mw.StaleButton.md#maxsize)**(): `number` <Badge type="tip" text="client" />  |
+| 获取自适应最大字体大小|
+| **[minSize](mw.StaleButton.md#minsize)**(): `number` <Badge type="tip" text="client" />  |
+| 获取自适应最小字体大小|
 | **[normalImageColor](mw.StaleButton.md#normalimagecolor)**(): `Readonly`<[`LinearColor`](mw.LinearColor.md)\> <Badge type="tip" text="client" />  |
 | 获取普通图片颜色|
 | **[normalImageDrawType](mw.StaleButton.md#normalimagedrawtype)**(): `Readonly`<[`SlateBrushDrawType`](../enums/mw.SlateBrushDrawType.md)\> <Badge type="tip" text="client" />  |
@@ -147,6 +155,8 @@ class UI_Main extends UIScript {
 | 获取按钮文字|
 | **[textAlign](mw.StaleButton.md#textalign)**(): [`TextJustify`](../enums/mw.TextJustify.md) <Badge type="tip" text="client" />  |
 | 获取字体对齐方式|
+| **[textHorizontalLayout](mw.StaleButton.md#texthorizontallayout)**(): [`UITextHorizontalLayout`](../enums/mw.UITextHorizontalLayout.md) <Badge type="tip" text="client" />  |
+| 获取当前字体的水平显示方式|
 | **[textVerticalAlign](mw.StaleButton.md#textverticalalign)**(): [`TextVerticalJustify`](../enums/mw.TextVerticalJustify.md) <Badge type="tip" text="client" />  |
 | 获取字体垂直对齐方式|
 | **[touchMethod](mw.StaleButton.md#touchmethod)**(`inTouchMethod`: [`ButtonTouchMethod`](../enums/mw.ButtonTouchMethod.md)): `void` <Badge type="tip" text="client" />  |
@@ -278,6 +288,8 @@ class UI_Main extends UIScript {
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -301,13 +313,18 @@ class UI_Main extends UIScript {
 
 ___
 
-### clickMethod <Score text="clickMethod" /> 
+### autoAdjust <Score text="autoAdjust" /> 
 
 <table class="get-set-table">
 <thead><tr>
 <th style="text-align: left">
 
-• `set` **clickMethod**(`inClickMethod`): `void` <Badge type="tip" text="client" />
+• `get` **autoAdjust**(): `boolean` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **autoAdjust**(`isAdjust`): `void` <Badge type="tip" text="client" />
 
 </th>
 </tr></thead>
@@ -315,15 +332,25 @@ ___
 <td style="text-align: left">
 
 
-设置点击模式
+获取字体是否自适应调整大小:boolean(为True时，文本内容字体大小将自动改变，尽可能大的充满整个文本框，而文本框大小不会变化)
 
-#### Parameters
+#### Returns
 
-| `inClickMethod` [`ButtonClickMethod`](../enums/mw.ButtonClickMethod.md) | 点击模式 |
+| `boolean` | 字体是否自适应调整大小 |
 | :------ | :------ |
 
 
-点击模式选择
+</td>
+<td style="text-align: left">
+
+
+设置字体是否自适应调整大小:boolean(为True时，文本内容字体大小将自动改变，尽可能大的充满整个文本框，而文本框大小不会变化)
+
+#### Parameters
+
+| `isAdjust` `boolean` | 字体是否自适应调整大小 |
+| :------ | :------ |
+
 
 
 </td>
@@ -947,6 +974,190 @@ ___
 #### Parameters
 
 | `inGlyph` [`UIFontGlyph`](../enums/mw.UIFontGlyph.md) | 字体字形的类型 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### isRichText <Score text="isRichText" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **isRichText**(): `boolean` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **isRichText**(`isRichText`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取是否为富文本
+
+#### Returns
+
+| `boolean` | 是否为富文本 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置富文本
+
+#### Parameters
+
+| `isRichText` | `boolean` |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### lineHeightPercentage <Score text="lineHeightPercentage" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **lineHeightPercentage**(): `number` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **lineHeightPercentage**(`inValue`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取行高系数
+
+#### Returns
+
+| `number` | 行高系数 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置行高系数
+
+#### Parameters
+
+| `inValue` `number` | 系数 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### maxSize <Score text="maxSize" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **maxSize**(): `number` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **maxSize**(`inText`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取自适应最大字体大小
+
+#### Returns
+
+| `number` | 返回当前的文本内容 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置自适应最大字体大小
+
+#### Parameters
+
+| `inText` `number` | 文本内容 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### minSize <Score text="minSize" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **minSize**(): `number` <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **minSize**(`inText`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取自适应最小字体大小
+
+#### Returns
+
+| `number` | 返回当前的文本内容 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置自适应最小字体大小
+
+#### Parameters
+
+| `inText` `number` | 文本内容 |
 | :------ | :------ |
 
 
@@ -1959,6 +2170,52 @@ ___
 
 ___
 
+### textHorizontalLayout <Score text="textHorizontalLayout" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **textHorizontalLayout**(): [`UITextHorizontalLayout`](../enums/mw.UITextHorizontalLayout.md) <Badge type="tip" text="client" />
+
+</th>
+<th style="text-align: left">
+
+• `set` **textHorizontalLayout**(`inTextHorizontalLayout`): `void` <Badge type="tip" text="client" />
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取当前字体的水平显示方式
+
+#### Returns
+
+| [`UITextHorizontalLayout`](../enums/mw.UITextHorizontalLayout.md) | 返回字体的水平显示方式 |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置字体的水平显示方式
+
+#### Parameters
+
+| `inTextHorizontalLayout` [`UITextHorizontalLayout`](../enums/mw.UITextHorizontalLayout.md) | 水平显示方式 |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
 ### textVerticalAlign <Score text="textVerticalAlign" /> 
 
 <table class="get-set-table">
@@ -2267,11 +2524,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2298,11 +2555,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 字体 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 字体 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 字体 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 字体 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 字体 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 字体 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 字体 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 字体 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2329,11 +2586,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2360,11 +2617,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___

@@ -13,12 +13,14 @@
 | **[value](mw.vectorSequencePoint.md#value)**: [`Vector`](mw.Vector.md)  |
 | 向量值|
 
+构造函数
+
 #### Parameters
 
-| `inTimeKey` | `number` |
+| `inTimeKey` `number` | 时间点 type: 浮点型 range:[0, 1] |
 | :------ | :------ |
-| `inValue` | [`Vector`](mw.Vector.md) |
-| `inTolerance?` | [`Vector`](mw.Vector.md) |
+| `inValue` [`Vector`](mw.Vector.md) | 时间点 type: 浮点型 range: 无 |
+| `inTolerance?` [`Vector`](mw.Vector.md) | 时间点 type: 浮点型 range: 无 default: mw.Vector(0, 0, 0) |
 
 ## Properties
 

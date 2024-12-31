@@ -1,7 +1,8 @@
 [
     {
-        "text": "0.40",
-        "link": "https://api-docs-040.ark.online/",
+        "text": "0.42",
+        "link": "https://api-docs-042.ark.online/",
+        "isBetaVersion": false,
         "path": true
     },
     {
@@ -10,13 +11,13 @@
         "path": true
     },
     {
-        "text": "0.39",
-        "link": "https://api-docs-039.ark.online/",
+        "text": "0.41",
+        "link": "https://api-docs-041.ark.online/",
         "path": true
     },
     {
-        "text": "0.37",
-        "link": "https://api-docs-037.ark.online/",
+        "text": "0.40",
+        "link": "https://api-docs-040.ark.online/",
         "path": true
     }
 ]

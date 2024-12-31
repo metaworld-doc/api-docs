@@ -120,7 +120,7 @@ class Cube {
 | `onReset?` (`obj`: `T`) => `void` |  重置对象的回调 default: null |
 | `onDestroy?` (`obj`: `T`) => `void` |  销毁对象的回调 default: null |
 | `onDespawn?` (`obj`: `T`) => `void` |  归还对象的回调 default: null |
-| `initNum?` `number` |  默认缓存对象数量 default: 2 range: 不做限制 type: 整数 |
+| `initNum?` `number` |  默认缓存对象数量 default: 2 range: 不做限制 type: 整形 |
 
 ## Accessors
 

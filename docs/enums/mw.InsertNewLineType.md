@@ -8,18 +8,12 @@
 
 ### Enumeration Members <Score text="Enumeration" /> 
 | **[AllCommit](mw.InsertNewLineType.md#allcommit)** = ``16``  |
-| :-----|
-| 所有回车都是提交，不换行|
-| **[AllNewLine](mw.InsertNewLineType.md#allnewline)** = ``0``  |
-| 所有回车都是换行|
-| **[AltEnterNewLine](mw.InsertNewLineType.md#altenternewline)** = ``2``  |
-| Alt + Enter 是换行|
-| **[CommandEnterNewLine](mw.InsertNewLineType.md#commandenternewline)** = ``8``  |
-| Command + Enter 是换行|
-| **[CtrlEnterNewLine](mw.InsertNewLineType.md#ctrlenternewline)** = ``1``  |
-| Ctrl + Enter 是换行|
-| **[ShiftEnterNewLine](mw.InsertNewLineType.md#shiftenternewline)** = ``4``  |
-| Shift + Enter 是换行|
+| :----- |
+| **[AllNewLine](mw.InsertNewLineType.md#allnewline)** = ``0`` |
+| **[AltEnterNewLine](mw.InsertNewLineType.md#altenternewline)** = ``2`` |
+| **[CommandEnterNewLine](mw.InsertNewLineType.md#commandenternewline)** = ``8`` |
+| **[CtrlEnterNewLine](mw.InsertNewLineType.md#ctrlenternewline)** = ``1`` |
+| **[ShiftEnterNewLine](mw.InsertNewLineType.md#shiftenternewline)** = ``4`` |
 
 ## Enumeration Members
 

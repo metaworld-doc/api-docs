@@ -13,6 +13,9 @@
 ## Table of contents
 
 ### Properties <Score text="Properties" /> 
+| **[onTextCommittedMaskCheck](mw.InputBox.md#ontextcommittedmaskcheck)**: `any` <Badge type="tip" text="client" />  |
+| :-----|
+| 文本提交屏蔽词检测封装|
 
 
 ::: details click
@@ -53,7 +56,7 @@
 | 插入换行的回车交互，请注意只要触发换行，就无法触发提交文本,枚举可能通过 “|” 组合在一起设置。判定支不支持需要通过“&”来判定|
 | **[onTextChanged](mw.InputBox.md#ontextchanged)**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`) => `void`\> <Badge type="tip" text="client" />  |
 | 文本改变事件|
-| **[onTextCommitted](mw.InputBox.md#ontextcommitted)**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md)) => `void`\> <Badge type="tip" text="client" />  |
+| **[onTextCommitted](mw.InputBox.md#ontextcommitted)**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md), `Result?`: [`maskWordCheckResult`](../modules/Core.mw.md#maskwordcheckresult)) => `void`\> <Badge type="tip" text="client" />  |
 | 文本提交事件|
 | **[outlineColor](mw.InputBox.md#outlinecolor)**(): [`LinearColor`](mw.LinearColor.md) <Badge type="tip" text="client" />  |
 | 设置字体描边颜色|
@@ -67,8 +70,6 @@
 | 获取字体阴影偏移|
 | **[strikethroughEnable](mw.InputBox.md#strikethroughenable)**(): `boolean` <Badge type="tip" text="client" />  |
 | 获取是否开启字体删除线|
-| **[text](mw.InputBox.md#text)**(): `string` <Badge type="tip" [text](mw.InputBox.md#text)="client" />  |
-| 获取文本内容|
 | **[textAlign](mw.InputBox.md#textalign)**(): [`TextJustify`](../enums/mw.TextJustify.md) <Badge type="tip" text="client" />  |
 | 获取字体对齐方式|
 | **[textHeight](mw.InputBox.md#textheight)**(): `number` <Badge type="tip" text="other" />  |
@@ -142,8 +143,10 @@
 
 
 ### Methods <Score text="Methods" /> 
-| **[deFocus](mw.InputBox.md#defocus)**(): `void` <Badge type="tip" text="client" />  |
+| **[asyncGetText](mw.InputBox.md#asyncgettext)**(): `Promise`<`string`\> <Badge type="tip" text="client" />  |
 | :-----|
+| 异步获取文本接口|
+| **[deFocus](mw.InputBox.md#defocus)**(): `void` <Badge type="tip" text="client" />  |
 | 设置输入框失焦状态，取消输入状态|
 | **[focus](mw.InputBox.md#focus)**(): `void` <Badge type="tip" text="client" />  |
 | 设置输入框聚焦状态，进入可输入状态|
@@ -192,6 +195,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -210,6 +215,22 @@
 
 
 ## Properties
+
+___
+
+### onTextCommittedMaskCheck <Score text="onTextCommittedMaskCheck" /> 
+
+• `Private` **onTextCommittedMaskCheck**: `any` <Badge type="tip" text="client" />
+
+文本提交屏蔽词检测封装
+
+**`Param`**
+
+usage:提交的文本
+
+**`Param`**
+
+usage:提交方式
 
 ## Accessors
 
@@ -846,7 +867,7 @@ ___
 <thead><tr>
 <th style="text-align: left">
 
-• `get` **onTextCommitted**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md)) => `void`\> <Badge type="tip" text="client" />
+• `get` **onTextCommitted**(): [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md), `Result?`: [`maskWordCheckResult`](../modules/Core.mw.md#maskwordcheckresult)) => `void`\> <Badge type="tip" text="client" />
 
 </th>
 </tr></thead>
@@ -858,7 +879,7 @@ ___
 
 #### Returns
 
-| [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md)) => `void`\> | 文本提交事件 |
+| [`MulticastDelegate`](mw.MulticastDelegate.md)<(`Text`: `string`, `CommitMethod`: [`TextCommit`](../enums/mw.TextCommit.md), `Result?`: [`maskWordCheckResult`](../modules/Core.mw.md#maskwordcheckresult)) => `void`\> | 文本提交事件 |
 | :------ | :------ |
 
 </td>
@@ -1143,52 +1164,6 @@ ___
 
 ___
 
-### text <Score text="text" /> 
-
-<table class="get-set-table">
-<thead><tr>
-<th style="text-align: left">
-
-• `get` **text**(): `string` <Badge type="tip" text="client" />
-
-</th>
-<th style="text-align: left">
-
-• `set` **text**(`inText`): `void` <Badge type="tip" text="client" />
-
-</th>
-</tr></thead>
-<tbody><tr>
-<td style="text-align: left">
-
-
-获取文本内容
-
-#### Returns
-
-| `string` | 文本内容 |
-| :------ | :------ |
-
-
-</td>
-<td style="text-align: left">
-
-
-设置文本内容
-
-#### Parameters
-
-| `inText` `string` | 文本 |
-| :------ | :------ |
-
-
-
-</td>
-</tr></tbody>
-</table>
-
-___
-
 ### textAlign <Score text="textAlign" /> 
 
 <table class="get-set-table">
@@ -1429,6 +1404,19 @@ ___
 
 ___
 
+### asyncGetText <Score text="asyncGetText" /> 
+
+• **asyncGetText**(): `Promise`<`string`\> <Badge type="tip" text="client" />
+
+异步获取文本接口
+
+#### Returns
+
+| `Promise`<`string`\> | 获取当前输入框的文本值,若为正在提交文本,则异步获取 |
+| :------ | :------ |
+
+___
+
 ### deFocus <Score text="deFocus" /> 
 
 • **deFocus**(): `void` <Badge type="tip" text="client" />
@@ -1469,11 +1457,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 图片 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 图片 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 图片 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 图片 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 图片 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 图片 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 图片 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 图片 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -1500,11 +1488,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 文本 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 文本 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 文本 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 文本 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 文本 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 文本 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 文本 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 文本 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -1531,11 +1519,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 阴影 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 阴影 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 阴影 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 阴影 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 阴影 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 阴影 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 阴影 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 阴影 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___

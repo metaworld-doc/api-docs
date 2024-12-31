@@ -121,7 +121,7 @@ ___
 
 #### Returns
 
-| [`EventListener`](mw.EventListener.md) |  |
+| [`EventListener`](mw.EventListener.md) | EventListener |
 | :------ | :------ |
 
 ___
@@ -159,7 +159,7 @@ ___
 
 #### Returns
 
-| [`EventListener`](mw.EventListener.md) |  |
+| [`EventListener`](mw.EventListener.md) | EventListener |
 | :------ | :------ |
 
 ___

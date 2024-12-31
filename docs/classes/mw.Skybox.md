@@ -1914,12 +1914,12 @@ ___
 
 #### Parameters
 
-| `targetTexture` `string` | 要切换到的天空球贴图 |
+| `targetTexture` `string` | 要切换到的天空球贴图 range: 无 |
 | :------ | :------ |
 | `switchMode` [`Gradient`](../enums/mw.SkyboxBackgroundSwitchMode.md#gradient) | 过渡方式 |
-| `switchTime` `number` | 过渡时间,单位：秒 |
+| `switchTime` `number` | 过渡时间,单位：秒 range: 无 type: 浮点型 |
 
 #### Returns
 
-| `boolean` |  |
+| `boolean` | 是否在切换 |
 | :------ | :------ |

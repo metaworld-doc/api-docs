@@ -128,6 +128,14 @@ ___
 
 姿态的混合模式
 
+::: warning Precautions
+
+姿态的播放位置(上半身, 下半身, 全身), 对正在播放的姿态修改时无效.
+如果这个姿态是通过预制姿态资源GUID创建的, 那么它的默认值会自动从资源上获取;
+如果是通过动画资源GUID创建的, 那么它的默认值为StanceBlendMode.WholeBody.
+
+:::
+
 #### Returns
 
 | [`StanceBlendMode`](../enums/mw.StanceBlendMode.md) |  |

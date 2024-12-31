@@ -1,4 +1,4 @@
-[mw](../modules/Core.mw.md) / RenderQueryParams
+[玩法](../groups/玩法.玩法.md) / RenderQueryParams
 
 # RenderQueryParams <Badge type="tip" text="Interface" /> <Score text="RenderQueryParams" />
 

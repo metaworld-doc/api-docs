@@ -24,7 +24,7 @@
 ### Methods <Score text="Methods" /> 
 | **[asyncSetByID](mw.ImageInfo.md#asyncsetbyid)**(`id`: `string`, `bUseSRGB?`: `boolean`): `Promise`<`boolean`\> <Badge type="tip" text="client" />  |
 | :-----|
-| 通过 ID 设置图片信息|
+| 通过 Id 设置图片信息|
 | **[setByAssetIcon](mw.ImageInfo.md#setbyasseticon)**(`assetId`: `string`, `size`: [`AssetIconSize`](../enums/mw.AssetIconSize.md), `bUseSRGB?`: `boolean`): `Promise`<`boolean`\> <Badge type="tip" text="client" />  |
 | 用指定的 id 和分辨率，设置图标|
 
@@ -274,13 +274,13 @@ ___
 
 • **asyncSetByID**(`id`, `bUseSRGB?`): `Promise`<`boolean`\> <Badge type="tip" text="client" />
 
-通过 ID 设置图片信息
+通过 Id 设置图片信息
 
 #### Parameters
 
-| `id` `string` | 图片 ID <br> range: 依据 ID 长度而定 |
+| `id` `string` | 图片Id <br> range: 依据 ID 长度而定 |
 | :------ | :------ |
-| `bUseSRGB?` `boolean` | 是否贴图使用SRGB模式 |
+| `bUseSRGB?` `boolean` | 是否贴图使用SRGB模式 default: true range: [true, false] |
 
 #### Returns
 
@@ -297,12 +297,12 @@ ___
 
 #### Parameters
 
-| `assetId` `string` |  传入图标的资源 id |
+| `assetId` `string` |  传入图标的资源 id range: 无 |
 | :------ | :------ |
 | `size` [`AssetIconSize`](../enums/mw.AssetIconSize.md) |  传入图标的分辨率枚举 |
-| `bUseSRGB?` `boolean` |  是否使用SRGB |
+| `bUseSRGB?` `boolean` |  是否使用SRGB default: true range: [true, false] |
 
 #### Returns
 
-| `Promise`<`boolean`\> |  |
+| `Promise`<`boolean`\> | 设置的结果 |
 | :------ | :------ |

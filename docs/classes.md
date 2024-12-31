@@ -98,6 +98,7 @@ Classes
 | [GameObjPool](classes/mwext.GameObjPool.md) | 用于缓存GameObject的对象池，适用资源库资源、场景对象、预制体的复用缓存 | [基类](groups/基类.基类.md) |
 | [GameObject](classes/mw.GameObject.md) | 场景中所有实体的基类 | [基类](groups/基类.基类.md) |
 | [Geometry](classes/mw.Geometry.md) | 几何坐标信息 | [界面](groups/界面.界面.md) |
+| [GestureDelegate](classes/mw.GestureDelegate.md) | 手势代理类 | [输入](groups/输入.输入.md) |
 | [GraphicsSettings](classes/mw.GraphicsSettings.md) | 图片画质设置 | [设置](groups/设置.设置.md) |
 
 
@@ -156,6 +157,7 @@ Classes
 | [ListItemStyle](classes/mw.ListItemStyle.md) | 背景图片风格类型 | [界面](groups/界面.界面.md) |
 | [ListView](classes/mw.ListView.md) | 列表视图 | [界面](groups/界面.界面.md) |
 | [ListViewItemDataBase](classes/mw.ListViewItemDataBase.md) | 列表视图节点数据基类 | [界面](groups/界面.界面.md) |
+| [LocaleUtil](classes/mw.LocaleUtil.md) | 本地化工具 | [工具](groups/工具.工具.md) |
 
 
 ## M
@@ -227,6 +229,7 @@ Classes
 | [RoomService](classes/mw.RoomService.md) | MGS以及玩家信息、数据、头像等相关API。 | [服务](groups/服务.服务.md) |
 | [RoomSettings](classes/mw.RoomSettings.md) | 房间设置 | [设置](groups/设置.设置.md) |
 | [Rotation](classes/mw.Rotation.md) | 欧拉角 | [基础类型](groups/基础类型.基础类型.md) |
+| [RouteService](classes/mw.RouteService.md) | 游戏管理器 | [服务](groups/服务.服务.md) |
 
 
 ## S

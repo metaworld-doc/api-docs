@@ -125,6 +125,10 @@ onDestroy 植物的凋谢和结束阶段。当游戏对象被销毁或从场景�
 | **[destroy](mw.Script.md#destroy)**(): `void` <Badge type="tip" text="server" />  |
 | :-----|
 | 销毁组件对象|
+| **[onActivate](mw.Script.md#onactivate)**(): `void`   |
+| 生命周期函数 - target 激活时调用|
+| **[onDeactivate](mw.Script.md#ondeactivate)**(): `void`   |
+| 生命周期函数 - target 禁用时调用|
 | **[onDestroy](mw.Script.md#ondestroy)**(): `void`   |
 | 生命周期函数 - 被销毁时调用|
 | **[onReplicated](mw.Script.md#onreplicated)**(`path`: `string`, `value`: `unknown`, `oldVal`: `unknown`): `boolean`  `void`   |
@@ -137,9 +141,9 @@ onDestroy 植物的凋谢和结束阶段。当游戏对象被销毁或从场景�
 
 ::: details click
 ### Methods <Score text="Methods" /> 
-| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
+| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
 | :-----|
-| 给定对象属性修改时触发的事件代理|
+| 获取给定对象属性修改时触发的事件代理。|
 :::
 
 
@@ -248,6 +252,24 @@ ___
 
 ___
 
+### onActivate <Score text="onActivate" /> 
+
+• `Protected` **onActivate**(): `void` 
+
+生命周期函数 - target 激活时调用
+
+
+___
+
+### onDeactivate <Score text="onDeactivate" /> 
+
+• `Protected` **onDeactivate**(): `void` 
+
+生命周期函数 - target 禁用时调用
+
+
+___
+
 ### onDestroy <Score text="onDestroy" /> 
 
 • `Protected` **onDestroy**(): `void` 
@@ -272,7 +294,7 @@ ___
 
 #### Returns
 
-| `boolean`  `void` |  |
+| `boolean`  `void` | 同步结果 |
 | :------ | :------ |
 
 ___

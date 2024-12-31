@@ -118,12 +118,12 @@ ___
 
 #### Parameters
 
-| `propertyName` | `string` |
+| `propertyName` `string` | 属性名称 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| `any` |  |
+| `any` | 属性 |
 | :------ | :------ |
 
 ___
@@ -207,9 +207,9 @@ ___
 
 #### Parameters
 
-| `propertyName` | `string` |
+| `propertyName` `string` | 属性名称 range: 无 |
 | :------ | :------ |
-| `value` | `any` |
+| `value` `any` | 属性值 range: 无 |
 
 
 ___

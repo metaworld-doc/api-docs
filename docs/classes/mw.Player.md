@@ -989,7 +989,7 @@ ___
 
 #### Parameters
 
-| `uniqueId` `string`  `number` | 玩家ID range: 依据玩家 ID 决定 type: 整数 |
+| `uniqueId` `string`  `number` | 玩家ID range: 依据玩家 ID 决定 type: 整形 |
 | :------ | :------ |
 
 #### Returns

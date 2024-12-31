@@ -267,9 +267,9 @@ ___
 
 #### Parameters
 
-| `itemId` `number` | 道具ID <br> range: 不做限制 type: 整数 |
+| `itemId` `number` | 道具ID <br> range: 不做限制 type: 整形 |
 | :------ | :------ |
-| `count?` `number` | 道具数量 default:1 <br> range: 不做限制 type: 整数 |
+| `count?` `number` | 道具数量 default:1 <br> range: 不做限制 type: 整形 |
 | `player?` [`Player`](mw.Player.md) | 道具所有者 default:服务端必传入 |
 
 #### Returns
@@ -341,7 +341,7 @@ ___
 
 #### Parameters
 
-| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整数 |
+| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整形 |
 | :------ | :------ |
 | `player?` [`Player`](mw.Player.md) | 服务端传入，打开指定玩家的背包 default:服务端必传入 |
 
@@ -378,12 +378,12 @@ ___
 
 #### Parameters
 
-| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整数 |
+| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整形 |
 | :------ | :------ |
 | `icon` `string` | 道具图片 <br> range: 不做限制 |
 | `name` `string` | 名称 <br> range: 不做限制 |
 | `quality?` [`ItemQuality`](../enums/mwext.ItemQuality.md) | 道具品质-默认普通 default:ItemQuality.Common |
-| `stackCount?` `number` | 堆叠数量 default:1 <br> range: 不做限制 type: 整数 |
+| `stackCount?` `number` | 堆叠数量 default:1 <br> range: 不做限制 type: 整形 |
 | `customData?` `any` | 额外数据 default:null |
 
 #### Returns
@@ -419,9 +419,9 @@ ___
 
 #### Parameters
 
-| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整数 |
+| `itemId` `number` | 道具ID <br> range: 根据道具ID确定 type: 整形 |
 | :------ | :------ |
-| `count?` `number` | 道具数量 default:1 <br> range: 不做限制 type: 整数 |
+| `count?` `number` | 道具数量 default:1 <br> range: 不做限制 type: 整形 |
 | `player?` [`Player`](mw.Player.md) | 道具所有者，服务端必传入 default:服务端必传入 |
 
 #### Returns

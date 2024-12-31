@@ -13,26 +13,5 @@
 ## Table of contents
 
 ### Methods <Score text="Methods" /> 
-| **[isReady](mw.AdsService.md#isready)**(`callback`: (`isReady`: `boolean`) => `void`): `void` <Badge type="tip" text="client" />  |
-| :-----|
-| 广告是否准备好|
 
 ## Methods
-
-___
-
-### isReady <Score text="isReady" /> 
-
-• `Static` **isReady**(`callback`): `void` <Badge type="tip" text="client" />
-
-广告是否准备好
-
-#### Parameters
-
-| `callback` (`isReady`: `boolean`) => `void` |  接收广告事件的回调 |
-| :------ | :------ |
-
-
-::: warning Precautions
-
-结果不准确，可能在广告准备好的情况返回false

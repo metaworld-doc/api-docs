@@ -41,10 +41,8 @@
 
 ::: details click
 ### Accessors <Score text="Accessors" /> 
-| **[actorFlagValue](mw.GameObject.md#actorflagvalue)**(): `number` <Badge type="tip" text="other" />  |
-| :-----|
-| 获取对象标记|
 | **[actorLevel](mw.GameObject.md#actorlevel)**(): `number` <Badge type="tip" text="other" />  |
+| :-----|
 | 获取Actor等级|
 | **[assetId](mw.GameObject.md#assetid)**(): `string`   |
 | 获取当前物体使用资源的GUID|
@@ -62,6 +60,8 @@
 | 获取当前物体同步状态|
 | **[parent](mw.GameObject.md#parent)**(): [`GameObject`](mw.GameObject.md)   |
 | 获取当前父物体|
+| **[sceneCaptureTag](mw.GameObject.md#scenecapturetag)**(): `string`   |
+| 获取当前物体的捕捉标签|
 | **[tag](mw.GameObject.md#tag)**(): `string`   |
 | 获取当前物体的标签|
 | **[worldTransform](mw.GameObject.md#worldtransform)**(): [`Transform`](mw.Transform.md)   |
@@ -97,17 +97,17 @@
 | 设置线条类型|
 | **[setPointXScale](mw.Spline.md#setpointxscale)**(`index`: `number`, `xScale`: `number`): `void`   |
 | 设置线条中指定索引处的顶点X轴缩放|
-| **[drawBox](mw.Spline.md#drawbox)**(`center`: [`Vector`](mw.Vector.md), `extent`: [`Vector`](mw.Vector.md), `color`: [`LinearColor`](mw.LinearColor.md), `rotation`: [`Rotation`](mw.Rotation.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[drawBox](mw.Spline.md#drawbox)**(`center`: [`Vector`](mw.Vector.md), `extent`: [`Vector`](mw.Vector.md), `color`: [`LinearColor`](mw.LinearColor.md), `rotation`: [`Rotation`](mw.Rotation.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="client" />  |
 | 绘制盒体|
-| **[drawCapsule](mw.Spline.md#drawcapsule)**(`center`: [`Vector`](mw.Vector.md), `halfHeight`: `number`, `radius`: `number`, `rotation`: [`Rotation`](mw.Rotation.md), `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[drawCapsule](mw.Spline.md#drawcapsule)**(`center`: [`Vector`](mw.Vector.md), `halfHeight`: `number`, `radius`: `number`, `rotation`: [`Rotation`](mw.Rotation.md), `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="client" />  |
 | 绘制胶囊体|
-| **[drawCircle](mw.Spline.md#drawcircle)**(`center`: [`Vector`](mw.Vector.md), `radius`: `number`, `segments`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`, `yAxis?`: [`Vector`](mw.Vector.md), `zAxis?`: [`Vector`](mw.Vector.md), `drawAxis?`: `boolean`): `void` <Badge type="tip" text="other" />  |
+| **[drawCircle](mw.Spline.md#drawcircle)**(`center`: [`Vector`](mw.Vector.md), `radius`: `number`, `segments`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`, `yAxis?`: [`Vector`](mw.Vector.md), `zAxis?`: [`Vector`](mw.Vector.md), `drawAxis?`: `boolean`): `void` <Badge type="tip" text="client" />  |
 | 绘制圆圈|
-| **[drawLine](mw.Spline.md#drawline)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[drawLine](mw.Spline.md#drawline)**(`start`: [`Vector`](mw.Vector.md), `end`: [`Vector`](mw.Vector.md), `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="client" />  |
 | 绘制线段|
-| **[drawPoint](mw.Spline.md#drawpoint)**(`position`: [`Vector`](mw.Vector.md), `size`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[drawPoint](mw.Spline.md#drawpoint)**(`position`: [`Vector`](mw.Vector.md), `size`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`): `void` <Badge type="tip" text="client" />  |
 | 绘制点|
-| **[drawSphere](mw.Spline.md#drawsphere)**(`center`: [`Vector`](mw.Vector.md), `radius`: `number`, `segments`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[drawSphere](mw.Spline.md#drawsphere)**(`center`: [`Vector`](mw.Vector.md), `radius`: `number`, `segments`: `number`, `color`: [`LinearColor`](mw.LinearColor.md), `duration`: `number`, `thickness`: `number`): `void` <Badge type="tip" text="client" />  |
 | 绘制球体|
 
 
@@ -136,8 +136,6 @@
 | 根据路径查找子物体|
 | **[getChildren](mw.GameObject.md#getchildren)**(): [`GameObject`](mw.GameObject.md)[]   |
 | 获取子物体|
-| **[getChildrenBoundingBoxCenter](mw.GameObject.md#getchildrenboundingboxcenter)**(`outer?`: [`Vector`](mw.Vector.md)): [`Vector`](mw.Vector.md)   |
-| 获取所有子对象包围盒中心点(不包含父对象,父对象不可用返回[0,0,0])|
 | **[getChildrenByName](mw.GameObject.md#getchildrenbyname)**(`name`: `string`): [`GameObject`](mw.GameObject.md)[]   |
 | 通过名字查找所有的子物体|
 | **[getComponent](mw.GameObject.md#getcomponent)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>   |
@@ -147,11 +145,11 @@
 | **[getComponents](mw.GameObject.md#getcomponents)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>[]   |
 | 获取指定类型的所有组件|
 | **[getCustomProperties](mw.GameObject.md#getcustomproperties)**(): `string`[]   |
-| 获取所有自定义属性|
+| 获取自定义属性名字数组，返回对象所有自定义属性。|
 | **[getCustomProperty](mw.GameObject.md#getcustomproperty)**<`T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)\>(`propertyName`: `string`): `T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)   |
-| 获取自定义属性|
-| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
-| 给定对象属性修改时触发的事件代理|
+| 获取自定义属性的值，服务器客户端均可调用，客户端调用需注意属性同步的延迟。|
+| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
+| 获取给定自定义属性修改时触发的事件代理。双端对象在服务器修改自定义属性后，双端均会触发事件并执行绑定函数。|
 | **[getVisibility](mw.GameObject.md#getvisibility)**(): `boolean`   |
 | 获取物体是否被显示|
 | **[isPrefabActor](mw.GameObject.md#isprefabactor)**(): `boolean`   |
@@ -170,8 +168,8 @@
 | 在指定时间内从当前缩放平滑变化至目标缩放|
 | **[setAbsolute](mw.GameObject.md#setabsolute)**(`absolutePosition?`: `boolean`, `absoluteRotation?`: `boolean`, `absoluteScale?`: `boolean`): `void`   |
 | 设置物体localTransform是相对于父物体或者世界|
-| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void`   |
-| 设置自定义属性|
+| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void` <Badge type="tip" text="server" />  |
+| 设置自定义属性的值，双端对象需在服务器调用。当设置的属性不存在时会新增自定义属性。|
 | **[setVisibility](mw.GameObject.md#setvisibility)**(`status`: `boolean`  [`PropertyStatus`](../enums/mw.PropertyStatus.md), `propagateToChildren?`: `boolean`): `void`   |
 | 设置物体是否被显示|
 | **[stopMove](mw.GameObject.md#stopmove)**(): `void` <Badge type="tip" text="other" />  |
@@ -230,13 +228,9 @@ ___
 
 获取样条线颜色
 
-**`Retuns`**
-
-样条线颜色
-
 #### Returns
 
-| [`LinearColor`](mw.LinearColor.md) |  |
+| [`LinearColor`](mw.LinearColor.md) | 样条线颜色 |
 | :------ | :------ |
 
 
@@ -248,7 +242,7 @@ ___
 
 #### Parameters
 
-| `value` [`LinearColor`](mw.LinearColor.md) | 样条线颜色 |
+| `value` [`LinearColor`](mw.LinearColor.md) | 样条线颜色 range: 无 |
 | :------ | :------ |
 
 
@@ -280,13 +274,9 @@ ___
 
 获取是否自动闭合，起点和终点生成一条连接线
 
-**`Retuns`**
-
-是否自动闭合
-
 #### Returns
 
-| `boolean` |  |
+| `boolean` | 是否自动闭合 |
 | :------ | :------ |
 
 
@@ -298,7 +288,7 @@ ___
 
 #### Parameters
 
-| `value` `boolean` | 是否自动闭合 |
+| `value` `boolean` | 是否自动闭合 range:[true,false] |
 | :------ | :------ |
 
 
@@ -330,13 +320,9 @@ ___
 
 获取样条线点的数量
 
-**`Retuns`**
-
-样条线点的数量
-
 #### Returns
 
-| `number` |  |
+| `number` | 样条线点的数量 |
 | :------ | :------ |
 
 
@@ -348,7 +334,7 @@ ___
 
 #### Parameters
 
-| `value` `number` | 样条线点的数量 |
+| `value` `number` | 样条线点的数量 type: 整型 range: 无 |
 | :------ | :------ |
 
 
@@ -380,13 +366,9 @@ ___
 
 获取样条线的宽度
 
-**`Retuns`**
-
-样条线宽度
-
 #### Returns
 
-| `number` |  |
+| `number` | 样条线宽度 |
 | :------ | :------ |
 
 
@@ -398,7 +380,7 @@ ___
 
 #### Parameters
 
-| `value` `number` | 样条线宽度 |
+| `value` `number` | 样条线宽度 type: 浮点型 range: 无 |
 | :------ | :------ |
 
 </td>
@@ -428,17 +410,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| [`Vector`](mw.Vector.md) |  |
+| [`Vector`](mw.Vector.md) | 到达切线 |
 | :------ | :------ |
-
-**`Retuns`**
-
-到达切线
 
 ___
 
@@ -450,17 +428,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| [`Vector`](mw.Vector.md) |  |
+| [`Vector`](mw.Vector.md) | 离开切线 |
 | :------ | :------ |
-
-**`Retuns`**
-
-离开切线
 
 ___
 
@@ -472,17 +446,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| [`Vector`](mw.Vector.md) |  |
+| [`Vector`](mw.Vector.md) | 顶点位置 |
 | :------ | :------ |
-
-**`Retuns`**
-
-顶点位置
 
 ___
 
@@ -494,17 +464,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| [`Rotation`](mw.Rotation.md) |  |
+| [`Rotation`](mw.Rotation.md) | 顶点旋转 |
 | :------ | :------ |
-
-**`Retuns`**
-
-顶点旋转
 
 ___
 
@@ -516,17 +482,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| [`PointType`](../enums/mw.PointType.md) |  |
+| [`PointType`](../enums/mw.PointType.md) | 顶点线条类型 |
 | :------ | :------ |
-
-**`Retuns`**
-
-顶点线条类型
 
 ___
 
@@ -538,17 +500,13 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 
 #### Returns
 
-| `number` |  |
+| `number` | 顶点X轴缩放 |
 | :------ | :------ |
-
-**`Retuns`**
-
-顶点X轴缩放
 
 ___
 
@@ -560,7 +518,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 | `tangent` [`Vector`](mw.Vector.md) | 到达切线 |
 
@@ -575,7 +533,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 | `tangent` [`Vector`](mw.Vector.md) | 离开切线 |
 
@@ -590,7 +548,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 | `position` [`Vector`](mw.Vector.md) | 顶点位置 |
 
@@ -605,7 +563,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 | `rotation` [`Rotation`](mw.Rotation.md) | 顶点旋转 |
 
@@ -620,7 +578,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
 | `type` [`PointType`](../enums/mw.PointType.md) | 顶点线条类型 |
 
@@ -635,28 +593,28 @@ ___
 
 #### Parameters
 
-| `index` `number` | 索引 |
+| `index` `number` | 索引 type: 整型 range: 无 |
 | :------ | :------ |
-| `xScale` `number` | 顶点X轴缩放 default:1 range: [0.01, 1000] type: 浮点数 |
+| `xScale` `number` | 顶点X轴缩放 default:1 range: [0.01, 1000] type: 浮点型 |
 
 
 ___
 
 ### drawBox <Score text="drawBox" /> 
 
-• `Static` **drawBox**(`center`, `extent`, `color`, `rotation`, `duration`, `thickness`): `void` <Badge type="tip" text="other" />
+• `Static` **drawBox**(`center`, `extent`, `color`, `rotation`, `duration`, `thickness`): `void` <Badge type="tip" text="client" />
 
 绘制盒体
 
 #### Parameters
 
-| `center` [`Vector`](mw.Vector.md) | 中心位置 default: |
+| `center` [`Vector`](mw.Vector.md) | 中心位置 |
 | :------ | :------ |
-| `extent` [`Vector`](mw.Vector.md) | 盒体范围 default: |
-| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `rotation` [`Rotation`](mw.Rotation.md) | 盒体朝向 default: |
-| `duration` `number` | 持续时间 default: |
-| `thickness` `number` | 厚度 default: |
+| `extent` [`Vector`](mw.Vector.md) | 盒体范围 |
+| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `rotation` [`Rotation`](mw.Rotation.md) | 盒体朝向 |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
+| `thickness` `number` | 厚度 range: 无 type: 浮点型 |
 
 
 <span style="font-size: 14px;">
@@ -682,20 +640,20 @@ ___
 
 ### drawCapsule <Score text="drawCapsule" /> 
 
-• `Static` **drawCapsule**(`center`, `halfHeight`, `radius`, `rotation`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="other" />
+• `Static` **drawCapsule**(`center`, `halfHeight`, `radius`, `rotation`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="client" />
 
 绘制胶囊体
 
 #### Parameters
 
-| `center` [`Vector`](mw.Vector.md) | 中心位置 default: |
+| `center` [`Vector`](mw.Vector.md) | 中心位置 |
 | :------ | :------ |
-| `halfHeight` `number` | 胶囊体半高 default: |
-| `radius` `number` | 胶囊体半径 default: |
-| `rotation` [`Rotation`](mw.Rotation.md) | - |
-| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `duration` `number` | 持续时间 default: |
-| `thickness` `number` | 厚度 default: |
+| `halfHeight` `number` | 胶囊体半高 range: 无 type: 浮点型 |
+| `radius` `number` | 胶囊体半径 range: 无 type: 浮点型 |
+| `rotation` [`Rotation`](mw.Rotation.md) | 胶囊体朝向 |
+| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
+| `thickness` `number` | 厚度 range: 无 type: 浮点型 |
 
 
 <span style="font-size: 14px;">
@@ -721,22 +679,22 @@ ___
 
 ### drawCircle <Score text="drawCircle" /> 
 
-• `Static` **drawCircle**(`center`, `radius`, `segments`, `color`, `duration`, `thickness`, `yAxis?`, `zAxis?`, `drawAxis?`): `void` <Badge type="tip" text="other" />
+• `Static` **drawCircle**(`center`, `radius`, `segments`, `color`, `duration`, `thickness`, `yAxis?`, `zAxis?`, `drawAxis?`): `void` <Badge type="tip" text="client" />
 
 绘制圆圈
 
 #### Parameters
 
-| `center` [`Vector`](mw.Vector.md) | 中心位置 default: |
+| `center` [`Vector`](mw.Vector.md) | 中心位置 |
 | :------ | :------ |
-| `radius` `number` | 半径 default: |
-| `segments` `number` | 段数 default: |
+| `radius` `number` | 半径 range: 无 type: 浮点型 |
+| `segments` `number` | 段数 range: 无 type: 整形 |
 | `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `duration` `number` | 持续时间 default: |
-| `thickness` `number` | 厚度 default: |
-| `yAxis?` [`Vector`](mw.Vector.md) | Y轴方向 default: |
-| `zAxis?` [`Vector`](mw.Vector.md) | Z轴方向 default: |
-| `drawAxis?` `boolean` | 是否绘制轴 default: |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
+| `thickness` `number` | 厚度 range: 无 type: 浮点型 |
+| `yAxis?` [`Vector`](mw.Vector.md) | Y轴方向 default: undefined |
+| `zAxis?` [`Vector`](mw.Vector.md) | Z轴方向 default: undefined |
+| `drawAxis?` `boolean` | 是否绘制轴 range:[true,false] default: undefined |
 
 
 <span style="font-size: 14px;">
@@ -762,18 +720,18 @@ ___
 
 ### drawLine <Score text="drawLine" /> 
 
-• `Static` **drawLine**(`start`, `end`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="other" />
+• `Static` **drawLine**(`start`, `end`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="client" />
 
 绘制线段
 
 #### Parameters
 
-| `start` [`Vector`](mw.Vector.md) | 开始位置 default: |
+| `start` [`Vector`](mw.Vector.md) | 开始位置 |
 | :------ | :------ |
-| `end` [`Vector`](mw.Vector.md) | 结束位置 default: |
-| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `duration` `number` | 持续时间 default: |
-| `thickness` `number` | 厚度 default: |
+| `end` [`Vector`](mw.Vector.md) | 结束位置 |
+| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
+| `thickness` `number` | 厚度 range: 无 type: 浮点型 |
 
 
 <span style="font-size: 14px;">
@@ -799,17 +757,17 @@ ___
 
 ### drawPoint <Score text="drawPoint" /> 
 
-• `Static` **drawPoint**(`position`, `size`, `color`, `duration`): `void` <Badge type="tip" text="other" />
+• `Static` **drawPoint**(`position`, `size`, `color`, `duration`): `void` <Badge type="tip" text="client" />
 
 绘制点
 
 #### Parameters
 
-| `position` [`Vector`](mw.Vector.md) | 位置 default: |
+| `position` [`Vector`](mw.Vector.md) | 位置 |
 | :------ | :------ |
-| `size` `number` | 尺寸 default: |
-| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `duration` `number` | 持续时间 default: |
+| `size` `number` | 尺寸 range: 无 type: 浮点型 |
+| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
 
 
 <span style="font-size: 14px;">
@@ -835,19 +793,19 @@ ___
 
 ### drawSphere <Score text="drawSphere" /> 
 
-• `Static` **drawSphere**(`center`, `radius`, `segments`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="other" />
+• `Static` **drawSphere**(`center`, `radius`, `segments`, `color`, `duration`, `thickness`): `void` <Badge type="tip" text="client" />
 
 绘制球体
 
 #### Parameters
 
-| `center` [`Vector`](mw.Vector.md) | 中心位置 default: |
+| `center` [`Vector`](mw.Vector.md) | 中心位置 |
 | :------ | :------ |
-| `radius` `number` | 半径 default: |
-| `segments` `number` | 段数 default: |
-| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 default: |
-| `duration` `number` | 持续时间 default: |
-| `thickness` `number` | 厚度 default: |
+| `radius` `number` | 半径 range: 无 type: 浮点型 |
+| `segments` `number` | 段数 range: 无 type: 整形 |
+| `color` [`LinearColor`](mw.LinearColor.md) | 颜色 |
+| `duration` `number` | 持续时间 range: 无 type: 浮点型 |
+| `thickness` `number` | 厚度 range: 无 type: 浮点型 |
 
 
 <span style="font-size: 14px;">

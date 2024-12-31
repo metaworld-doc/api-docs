@@ -42,7 +42,7 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 美卡女性
 
 ___
@@ -53,7 +53,7 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 美卡男性
 
 ___
@@ -64,7 +64,7 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 Lowpoly成年女性
 
 ___
@@ -75,7 +75,7 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 Lowpoly成年男性
 
 ___
@@ -94,7 +94,7 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 写实成年女性
 
 ___
@@ -105,5 +105,5 @@ ___
 
 **`Deprecated`**
 
-info:该枚举已废弃，在该枚举被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
+info:该接口已废弃，在该接口被删除前会仍保持可用，请尽快使用替换方案以免出现问题 since:040 reason:下架此风格 replacement:用现存风格替换
 写实成年男性

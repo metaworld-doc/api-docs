@@ -79,6 +79,10 @@ PlayerState基类
 | **[destroy](mw.Script.md#destroy)**(): `void` <Badge type="tip" text="server" />  |
 | :-----|
 | 销毁组件对象|
+| **[onActivate](mw.Script.md#onactivate)**(): `void`   |
+| 生命周期函数 - target 激活时调用|
+| **[onDeactivate](mw.Script.md#ondeactivate)**(): `void`   |
+| 生命周期函数 - target 禁用时调用|
 | **[onDestroy](mw.Script.md#ondestroy)**(): `void`   |
 | 生命周期函数 - 被销毁时调用|
 | **[onReplicated](mw.Script.md#onreplicated)**(`path`: `string`, `value`: `unknown`, `oldVal`: `unknown`): `boolean`  `void`   |

@@ -27,11 +27,15 @@
 
 • **CobblestoneService** = ``0``
 
+CobblestoneService
+
 ___
 
 ### Developers <Score text="Developers" /> 
 
 • **Developers** = ``3``
+
+Developers
 
 ___
 
@@ -39,11 +43,15 @@ ___
 
 • **Games** = ``5``
 
+Games
+
 ___
 
 ### Gateway <Score text="Gateway" /> 
 
 • **Gateway** = ``2``
+
+Gateway
 
 ___
 
@@ -51,11 +59,15 @@ ___
 
 • **Login** = ``8``
 
+Login
+
 ___
 
 ### MGS <Score text="MGS" /> 
 
 • **MGS** = ``6``
+
+MGS
 
 ___
 
@@ -63,11 +75,15 @@ ___
 
 • **Packages** = ``9``
 
+Packages
+
 ___
 
 ### Pandora <Score text="Pandora" /> 
 
 • **Pandora** = ``10``
+
+Pandora
 
 ___
 
@@ -75,11 +91,15 @@ ___
 
 • **Register** = ``7``
 
+Register
+
 ___
 
 ### Resource <Score text="Resource" /> 
 
 • **Resource** = ``1``
+
+Resource
 
 ___
 
@@ -87,8 +107,12 @@ ___
 
 • **Tasks** = ``4``
 
+Tasks
+
 ___
 
 ### Translation <Score text="Translation" /> 
 
 • **Translation** = ``11``
+
+Translation

@@ -45,8 +45,6 @@ Avatar商城的应用内购服务
 | 下单商品并跳转支付，可以指定多个商品进行购买。如果需要携带额外信息（比如折扣token），可以加入到CommodityInfo.expand字段中|
 | **[promptRecharge](mw.AvatarEditorService.md#promptrecharge)**(): `void` <Badge type="tip" text="client" />  |
 | 拉起充值页面|
-| **[setAvatarEditorButtonAbility](mw.AvatarEditorService.md#setavatareditorbuttonability)**(`ability`: `number`): `void` <Badge type="tip" text="client" />  |
-| 设置角色编辑器按钮的功能|
 | **[setAvatarEditorButtonVisible](mw.AvatarEditorService.md#setavatareditorbuttonvisible)**(`visible`: `boolean`): `void` <Badge type="tip" text="client" />  |
 | 设置角色编辑器按钮可见性|
 
@@ -70,7 +68,7 @@ Avatar商城的应用内购服务
 
 #### Returns
 
-| [`MulticastDelegate`](mw.MulticastDelegate.md)<(`eventName`: `string`, ...`params`: `unknown`[]) => `void`\> |  |
+| [`MulticastDelegate`](mw.MulticastDelegate.md)<(`eventName`: `string`, ...`params`: `unknown`[]) => `void`\> | 角编商城状态发生变化时会触发的委托 |
 | :------ | :------ |
 
 </td>
@@ -168,7 +166,7 @@ ___
 
 #### Returns
 
-| `Promise`<`void`\> |  |
+| `Promise`<`void`\> | 异步void |
 | :------ | :------ |
 
 ___
@@ -181,9 +179,9 @@ ___
 
 #### Parameters
 
-| `locImgPath` `string` |  本地图片文件路径 |
+| `locImgPath` `string` |  本地图片文件路径 range: 无 |
 | :------ | :------ |
-| `imgName` `string` |  本地图片文件名 |
+| `imgName` `string` |  本地图片文件名 range: 无 |
 
 #### Returns
 
@@ -200,7 +198,7 @@ ___
 
 #### Returns
 
-| `Promise`<`boolean`\> |  |
+| `Promise`<`boolean`\> | 是否支持 |
 | :------ | :------ |
 
 ___
@@ -285,7 +283,7 @@ ___
 
 #### Returns
 
-| `Promise`<`boolean`\> |  |
+| `Promise`<`boolean`\> | 是否支持 |
 | :------ | :------ |
 
 ___
@@ -303,7 +301,7 @@ ___
 
 #### Returns
 
-| `Promise`<`boolean`\> |  |
+| `Promise`<`boolean`\> | 打开结果 |
 | :------ | :------ |
 
 ___
@@ -372,20 +370,6 @@ ___
 • `Static` **promptRecharge**(): `void` <Badge type="tip" text="client" />
 
 拉起充值页面
-
-
-___
-
-### setAvatarEditorButtonAbility <Score text="setAvatarEditorButtonAbility" /> 
-
-• `Static` **setAvatarEditorButtonAbility**(`ability`): `void` <Badge type="tip" text="client" />
-
-设置角色编辑器按钮的功能
-
-#### Parameters
-
-| `ability` `number` |  1 - 去装扮；2 - 打开角编商城；3 - 打开角色名片 |
-| :------ | :------ |
 
 
 ___

@@ -6,10 +6,6 @@
 
 ## Table of contents
 
-### Properties <Score text="Properties" /> 
-| **[tsEventRpcFuncs](mw.DebugUtil.md#tseventrpcfuncs)**: `string`[]  |
-| :----- |
-
 ### Accessors <Score text="Accessors" /> 
 | **[cachedRPCs](mw.DebugUtil.md#cachedrpcs)**(): `string`[]  |
 | :-----|
@@ -30,12 +26,6 @@
 | 当前帧发送的RPC消息。|
 | **[usedMemory](mw.DebugUtil.md#usedmemory)**(): `number`  |
 | 当前使用的总内存大小，单位MB。|
-
-## Properties
-
-### tsEventRpcFuncs <Score text="tsEventRpcFuncs" /> 
-
-▪ `Static` **tsEventRpcFuncs**: `string`[]
 
 ## Accessors
 

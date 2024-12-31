@@ -13,6 +13,7 @@ Enums
 | [AnimationBlendMode](enums/mw.AnimationBlendMode.md) | 动画曲线 | [角色系统](groups/角色系统.角色系统.md) |
 | [AnimationMode](enums/mw.AnimationMode.md) | 动画模式 | [动画](groups/动画.动画.md) |
 | [AppearanceType](enums/mw.AppearanceType.md) | 形象类型 | [角色系统](groups/角色系统.角色系统.md) |
+| [AspectRatioAxisConstraint](enums/mw.AspectRatioAxisConstraint.md) | 横纵比约束 | [玩法](groups/玩法.玩法.md) |
 | [AssetIconSize](enums/mw.AssetIconSize.md) | 图标的分辨率 | [界面](groups/界面.界面.md) |
 | [AssetType](enums/mw.AssetType.md) | 资源类型 | [基础类型](groups/基础类型.基础类型.md) |
 | [AttenuationDistanceModel](enums/mw.AttenuationDistanceModel.md) | 音效衰减函数模型 | [场景](groups/场景.场景.md) |
@@ -121,6 +122,7 @@ Enums
 | [LanguageCodeType](enums/mw.LanguageCodeType.md) | 游戏本地化语言 | [基础类型](groups/基础类型.基础类型.md) |
 | [LanguageType](enums/mw.LanguageType.md) | 游戏语言 | [基础类型](groups/基础类型.基础类型.md) |
 | [LinkClassType](enums/mw.LinkClassType.md) | 设置链接区域的寻路类型 | [玩法](groups/玩法.玩法.md) |
+| [LogLevel](enums/mw.LogLevel.md) | 日志等级 | [基础类型](groups/基础类型.基础类型.md) |
 
 
 ## M
@@ -162,7 +164,10 @@ Enums
 | :-----| :-----| :-----|
 | [ParticleEmitterOrientation](enums/mw.ParticleEmitterOrientation.md) | 特效发射取向 | [场景](groups/场景.场景.md) |
 | [ParticleEmitterShape](enums/mw.ParticleEmitterShape.md) | 特效形状枚举 | [场景](groups/场景.场景.md) |
+| [ParticleEmitterShapeInOut](enums/mw.ParticleEmitterShapeInOut.md) | 发射内外朝向 | [场景](groups/场景.场景.md) |
 | [ParticleEmitterShapeStyle](enums/mw.ParticleEmitterShapeStyle.md) | 特效发射类型 | [场景](groups/场景.场景.md) |
+| [ParticleFlipbookLayout](enums/mw.ParticleFlipbookLayout.md) | 序列帧布局 | [场景](groups/场景.场景.md) |
+| [ParticleFlipbookMode](enums/mw.ParticleFlipbookMode.md) | 序列帧播放模式 | [场景](groups/场景.场景.md) |
 | [PlayStatus](enums/mw.PlayStatus.md) | 帧动画播放规则 | [界面](groups/界面.界面.md) |
 | [PointType](enums/mw.PointType.md) | 样条线 | [玩法](groups/玩法.玩法.md) |
 | [PostProcessPreset](enums/mw.PostProcessPreset.md) | 后处理预设枚举 | [场景](groups/场景.场景.md) |
@@ -174,6 +179,7 @@ Enums
 ## R
 | Name | Description | Groups |
 | :-----| :-----| :-----|
+| [ReleaseStatus](enums/mw.ReleaseStatus.md) | UGC 发布的状态 | [基础类型](groups/基础类型.基础类型.md) |
 | [RuntimePlatform](enums/mw.RuntimePlatform.md) | 运行平台 | [基础类型](groups/基础类型.基础类型.md) |
 
 
@@ -182,6 +188,7 @@ Enums
 | :-----| :-----| :-----|
 | [ScrollBarDefaultLocation](enums/mw.ScrollBarDefaultLocation.md) | 滚动条默认位置 | [界面](groups/界面.界面.md) |
 | [SelectInfo](enums/mw.SelectInfo.md) | 列表视图选择来源信息 | [界面](groups/界面.界面.md) |
+| [SelectTapType](enums/mw.SelectTapType.md) | UGC 选中的单选或者多选 | [基础类型](groups/基础类型.基础类型.md) |
 | [SelectionMode](enums/mw.SelectionMode.md) | 列表视图选择模式 | [界面](groups/界面.界面.md) |
 | [SkyPreset](enums/mw.SkyPreset.md) | 天空盒预设枚举 | [场景](groups/场景.场景.md) |
 | [SkyboxBackgroundSwitchMode](enums/mw.SkyboxBackgroundSwitchMode.md) | 天空盒背景的切换方式枚举 | [场景](groups/场景.场景.md) |
@@ -204,6 +211,7 @@ Enums
 | [TextCommit](enums/mw.TextCommit.md) | 输入提交模式 | [界面](groups/界面.界面.md) |
 | [TextJustify](enums/mw.TextJustify.md) | 文本排列对齐规则 | [界面](groups/界面.界面.md) |
 | [TextVerticalJustify](enums/mw.TextVerticalJustify.md) | 文本排列垂直对齐规则 | [界面](groups/界面.界面.md) |
+| [TextureFormat](enums/mw.TextureFormat.md) | 贴图格式 | [基础类型](groups/基础类型.基础类型.md) |
 | [TouchInputType](enums/mw.TouchInputType.md) | 触摸类型 | [输入](groups/输入.输入.md) |
 | [TriggerShapeType](enums/mw.TriggerShapeType.md) | 碰撞形状 | [玩法](groups/玩法.玩法.md) |
 
@@ -223,6 +231,7 @@ Enums
 | [UIScrollBoxAnimationType](enums/mw.UIScrollBoxAnimationType.md) | 滚动框动画类型 | [界面](groups/界面.界面.md) |
 | [UITextHorizontalLayout](enums/mw.UITextHorizontalLayout.md) | 文本框规则显示规则限制 | [界面](groups/界面.界面.md) |
 | [UIVerticalCollation](enums/mw.UIVerticalCollation.md) | 自动布局子项布局排序 - 垂直排序 | [界面](groups/界面.界面.md) |
+| [UploadTextureResultType](enums/mw.UploadTextureResultType.md) | 移动编辑器上传贴图返回状态 | [数据处理](groups/数据处理.数据处理.md) |
 
 
 ## V

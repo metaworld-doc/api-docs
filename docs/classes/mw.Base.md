@@ -20,9 +20,9 @@ GameObject和Script的基类，定义基础能力
 | 监听系统属性同步事件|
 
 ### Methods <Score text="Methods" /> 
-| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
+| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
 | :-----|
-| 给定对象属性修改时触发的事件代理|
+| 获取给定对象属性修改时触发的事件代理。|
 
 ## Properties
 
@@ -31,6 +31,10 @@ GameObject和Script的基类，定义基础能力
 • **onPropertyChange**: `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\>
 
 监听系统属性同步事件
+
+<span style="font-size: 14px;">
+使用示例:监听属性变化
+</span>
 
 ```ts
 this.onPropertyChange.add((path, value, oldValue) => {
@@ -42,13 +46,13 @@ this.onPropertyChange.add((path, value, oldValue) => {
 
 ### getPropertyChangeDelegate <Score text="getPropertyChangeDelegate" /> 
 
-• **getPropertyChangeDelegate**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />
+• **getPropertyChangeDelegate**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />
 
-给定对象属性修改时触发的事件代理
+获取给定对象属性修改时触发的事件代理。
 
 #### Parameters
 
-| `property` `string` | 对象属性名字 例如：'x' 'rotation.x' |
+| `property` `string` | 对象属性名字 例如：'x' 'rotation.x' range:不为空 |
 | :------ | :------ |
 
 #### Returns

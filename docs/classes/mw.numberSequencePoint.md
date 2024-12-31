@@ -13,12 +13,14 @@
 | **[value](mw.numberSequencePoint.md#value)**: `number`  |
 | 标量值|
 
+构造函数
+
 #### Parameters
 
-| `inTimeKey` | `number` |
+| `inTimeKey` `number` | 时间点 type: 浮点型 range:[0, 1] |
 | :------ | :------ |
-| `inValue` | `number` |
-| `inTolerance?` | `number` |
+| `inValue` `number` | 时间点 type: 浮点型 range: 无 |
+| `inTolerance?` `number` | 时间点 type: 浮点型 range: 无 default: 0 |
 
 ## Properties
 

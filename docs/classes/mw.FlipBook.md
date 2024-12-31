@@ -144,6 +144,8 @@
 | 给定对象属性修改时触发的事件代理|
 | **[invalidateLayoutAndVolatility](mw.Widget.md#invalidatelayoutandvolatility)**(): `void` <Badge type="tip" text="client" />  |
 | 立刻触发重新渲染的和排布计算|
+| **[isValid](mw.Widget.md#isvalid)**(): `boolean` <Badge type="tip" text="client" />  |
+| 判断控件有没有被销毁，是否是有效的控件|
 | **[removeAllChildren](mw.Widget.md#removeallchildren)**(): `void` <Badge type="tip" text="client" />  |
 | 清除所有子节点,会销毁UI无法再使用|
 | **[removeChild](mw.Widget.md#removechild)**(`child`: [`Widget`](mw.Widget.md)): `void` <Badge type="tip" text="client" />  |
@@ -572,7 +574,7 @@ ___
 
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
 | :------ | :------ |
-| `inName?` `string` | 创建控件的名称 default:null |
+| `inName?` `string` | 创建控件的名称 default:null range:无 |
 
 #### Returns
 
